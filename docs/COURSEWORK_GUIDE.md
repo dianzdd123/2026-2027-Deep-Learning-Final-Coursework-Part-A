@@ -4,6 +4,9 @@
 
 [Return to the repository overview](../README.md)
 
+For the accompanying project handbook and a map of its topics to the available notebook
+and coursework guidance, see [Course resources](../resources/README.md).
+
 This guide explains the tasks, evaluation protocol and submission interface supplied with
 `Tactile_DL_2027.zip`. **Part A** is the name of this part of the final coursework. The
 dataset itself contains **two tasks**, called Task A and Task B in the original package:

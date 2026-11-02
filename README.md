@@ -4,11 +4,20 @@
 
 This repository provides the tactile dataset and practical guidance for **Part A of the 2026–2027 Deep Learning final coursework**, maintained by **Dandan Zhang, Imperial College London**. It contains a compact teaching subset of **TacVerse**, with two supervised learning tasks: recognising an object's shape from a tactile image and estimating a three-dimensional contact-force vector.
 
-**[Download the complete dataset — 37.44 MB](https://github.com/dianzdd123/2026-2027-Deep-Learning-Final-Coursework-Part-A/releases/download/v1.0.0/Tactile_DL_2027.zip)** · **[Dataset card](docs/DATASET_CARD.md)** · **[Coursework and submission guide](docs/COURSEWORK_GUIDE.md)** · **[Release v1.0.0](https://github.com/dianzdd123/2026-2027-Deep-Learning-Final-Coursework-Part-A/releases/tag/v1.0.0)**
+**[Download the complete dataset — 37.44 MB](https://github.com/dianzdd123/2026-2027-Deep-Learning-Final-Coursework-Part-A/releases/download/v1.0.0/Tactile_DL_2027.zip)** · **[Dataset card](docs/DATASET_CARD.md)** · **[Coursework and submission guide](docs/COURSEWORK_GUIDE.md)** · **[Handbook and reading guide](resources/README.md)** · **[Release v1.0.0](https://github.com/dianzdd123/2026-2027-Deep-Learning-Final-Coursework-Part-A/releases/tag/v1.0.0)**
 
 [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dianzdd123/2026-2027-Deep-Learning-Final-Coursework-Part-A/blob/main/notebooks/01_explore_dataset.ipynb)
 
 > **Coursework naming:** “Part A” names this part of the final coursework. It includes **both** tasks in the supplied package: **Task A — shape classification** and **Task B — force estimation**. The task labels do not refer to separate coursework parts.
+
+### A suggested route through the materials
+
+1. Read the [coursework guide](docs/COURSEWORK_GUIDE.md) to understand the tasks, required splits, evaluation and prediction interface.
+2. Use the [Deep Learning in Practice handbook](resources/Deep_Learning_in_Practice_HandBook.pdf) and its [reading map](resources/README.md) to plan your project workflow.
+3. Open the [exploration notebook](notebooks/01_explore_dataset.ipynb), download and verify the data, and inspect images alongside their labels.
+4. Create your own reproducible splits and models, then use the coursework guide to check evaluation and submission.
+
+The supplied handbook is a **draft**: its Quick Start is written out, while Chapters 1–7 and the appendices contain “To Do” outlines. The companion `examples/` files mentioned in that PDF were not included in the upload. Use this repository's notebook and scripts for the runnable tactile-data starting point. The handbook supports project planning; the coursework guide and issued assessment brief define the assessment requirements.
 
 ## 1. Dataset at a glance
 
@@ -96,6 +105,8 @@ The helper preserves an existing extracted data folder. Choose a different `--ou
 |---|---|
 | [`docs/DATASET_CARD.md`](docs/DATASET_CARD.md) | Provenance, label definitions, measured statistics, limitations and integrity details |
 | [`docs/COURSEWORK_GUIDE.md`](docs/COURSEWORK_GUIDE.md) | Splitting, evaluation, tangential-force analysis and submission requirements from the supplied brief |
+| [`resources/README.md`](resources/README.md) | Reading map connecting the handbook to the tactile coursework workflow |
+| [`resources/Deep_Learning_in_Practice_HandBook.pdf`](resources/Deep_Learning_in_Practice_HandBook.pdf) | The supplied 9-page handbook draft, preserved unchanged |
 | [`metadata/shape_classification/`](metadata/shape_classification/) | Unmodified copies of `classes.csv` and shape `labels.csv` for browsing |
 | [`metadata/force_regression/labels.csv`](metadata/force_regression/labels.csv) | Unmodified force labels for browsing |
 | [`example_submission/`](example_submission/) | Original inference script, demonstration training script and supplied weights |
