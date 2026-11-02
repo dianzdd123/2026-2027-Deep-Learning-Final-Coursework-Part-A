@@ -1,0 +1,6 @@
+# Data exploration and integrity checking; use Python 3.10 or newer.
+# Install PyTorch separately only if running the supplied model example.
+numpy
+pandas
+pillow
+matplotlib

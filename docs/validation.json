@@ -1,0 +1,163 @@
+{
+  "dataset": "Tactile_DL_2027",
+  "audited_on": "2026-11-02",
+  "scope": "Original uploaded coursework archive; no data or label changes.",
+  "archive": {
+    "size_bytes": 37441246,
+    "sha256": "1a1620e4695b220043318e7b209202940b930fcf82f69b4f761213255c6b4ca5"
+  },
+  "files": 4009,
+  "uncompressed_bytes": 37546502,
+  "images": {
+    "count": 4000,
+    "format": "JPEG",
+    "mode": "RGB",
+    "width": 320,
+    "height": 240,
+    "decode_failures": 0,
+    "exact_duplicate_byte_groups": 0,
+    "exact_duplicate_decoded_pixel_groups": 0,
+    "with_exif": 0,
+    "with_icc_profile": 0
+  },
+  "shape": {
+    "rows": 2000,
+    "class_mapping": {
+      "cylinder": 0,
+      "dots": 1,
+      "hexagon": 2,
+      "line": 3,
+      "moon": 4,
+      "rectangle": 5,
+      "ring": 6,
+      "small_sphere": 7,
+      "triangle": 8,
+      "wave": 9
+    },
+    "counts_by_class": {
+      "cylinder": 200,
+      "dots": 200,
+      "hexagon": 200,
+      "line": 200,
+      "moon": 200,
+      "rectangle": 200,
+      "ring": 200,
+      "small_sphere": 200,
+      "triangle": 200,
+      "wave": 200
+    },
+    "missing_labelled_images": 0,
+    "unlabelled_images": 0,
+    "duplicate_filenames": 0,
+    "class_mapping_errors": 0
+  },
+  "force": {
+    "rows": 2000,
+    "unique_contacts": 1000,
+    "contact_id_min": 1,
+    "contact_id_max": 1000,
+    "press_images": 1000,
+    "shear_images": 1000,
+    "invalid_contact_pairs": 0,
+    "missing_labelled_images": 0,
+    "unlabelled_images": 0,
+    "duplicate_filenames": 0,
+    "nonfinite_targets": 0,
+    "units": "N",
+    "statistics": {
+      "all": {
+        "fx": {
+          "n": 2000,
+          "min": -1.329635,
+          "max": 1.396376,
+          "mean": -0.034491662,
+          "std_sample": 0.2629860846357175,
+          "std_population": 0.26292032989418823,
+          "nonfinite": 0
+        },
+        "fy": {
+          "n": 2000,
+          "min": -1.36787,
+          "max": 1.277017,
+          "mean": -0.020219525,
+          "std_sample": 0.2965760888697199,
+          "std_population": 0.29650193557718196,
+          "nonfinite": 0
+        },
+        "fz": {
+          "n": 2000,
+          "min": -1.989753,
+          "max": -0.010382,
+          "mean": -0.6893554505,
+          "std_sample": 0.47027174949682227,
+          "std_population": 0.47015416685978073,
+          "nonfinite": 0
+        }
+      },
+      "press": {
+        "fx": {
+          "n": 1000,
+          "min": -0.293308,
+          "max": 0.078049,
+          "mean": -0.069390953,
+          "std_sample": 0.055699496005871534,
+          "std_population": 0.055671639291948204,
+          "nonfinite": 0
+        },
+        "fy": {
+          "n": 1000,
+          "min": -0.132791,
+          "max": 0.115524,
+          "mean": -0.005559358,
+          "std_sample": 0.031028064415383715,
+          "std_population": 0.031012546502727504,
+          "nonfinite": 0
+        },
+        "fz": {
+          "n": 1000,
+          "min": -1.989753,
+          "max": -0.035083,
+          "mean": -0.707166961,
+          "std_sample": 0.47613334325507467,
+          "std_population": 0.47589521703700227,
+          "nonfinite": 0
+        }
+      },
+      "shear": {
+        "fx": {
+          "n": 1000,
+          "min": -1.329635,
+          "max": 1.396376,
+          "mean": 0.00040762900000000034,
+          "std_sample": 0.36448840735526244,
+          "std_population": 0.3643061175677391,
+          "nonfinite": 0
+        },
+        "fy": {
+          "n": 1000,
+          "min": -1.36787,
+          "max": 1.277017,
+          "mean": -0.034879692,
+          "std_sample": 0.4178633584736355,
+          "std_population": 0.4176543745353461,
+          "nonfinite": 0
+        },
+        "fz": {
+          "n": 1000,
+          "min": -1.896513,
+          "max": -0.010382,
+          "mean": -0.67154394,
+          "std_sample": 0.4638904160877744,
+          "std_population": 0.4636584128644172,
+          "nonfinite": 0
+        }
+      }
+    }
+  },
+  "notes": [
+    "Force statistics are calculated from the released subset, not the full upstream dataset.",
+    "std_sample uses N−1 in the variance denominator; std_population uses N.",
+    "No train, validation or test split is supplied.",
+    "Source example weights were trained on all released data and demonstrate the submission interface; they are not a valid held-out evaluation."
+  ]
+}

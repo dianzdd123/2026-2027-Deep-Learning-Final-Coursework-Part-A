@@ -1,0 +1,5 @@
+# Extra packages your predict.py needs that are NOT already installed in Google Colab.
+# One package per line, ideally with a pinned version, e.g.
+#   timm==1.0.9
+# The example only uses torch, numpy, pandas and pillow (all pre-installed in Colab),
+# so nothing is listed here.

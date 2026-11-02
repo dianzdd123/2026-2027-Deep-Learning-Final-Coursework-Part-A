@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+Tactile_DL_2027/
+Tactile_DL_2027.zip
+*.part
+outputs/
+.DS_Store

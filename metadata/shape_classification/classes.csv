@@ -1,0 +1,11 @@
+class_name,class_id
+cylinder,0
+dots,1
+hexagon,2
+line,3
+moon,4
+rectangle,5
+ring,6
+small_sphere,7
+triangle,8
+wave,9
