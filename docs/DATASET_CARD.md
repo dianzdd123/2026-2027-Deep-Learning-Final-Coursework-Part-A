@@ -1,6 +1,6 @@
 # Dataset card — Tactile Deep Learning Coursework, 2026–2027
 
-[Repository overview](../README.md) · [Coursework guide](COURSEWORK_GUIDE.md) · [Machine-readable validation](validation.json)
+[Repository overview](../README.md) · [Coursework guide](COURSEWORK_GUIDE.md) · [Correct project handbook](../resources/2026_2027_DL_Final_Project_Handbook_Shared.pdf) · [Machine-readable validation](validation.json)
 
 ## Release identity and intended use
 
@@ -17,7 +17,13 @@
 | Hidden evaluation data | Described in the supplied instructions; not included in this release |
 | Licence | No licence file supplied; no new licence assigned to source data or example code |
 
-Part A includes both original tasks: **Task A (shape classification)** and **Task B (force estimation)**. This is a teaching subset, not the complete TacVerse benchmark. Counts, class IDs and statistics on this page describe this particular release.
+Part A includes **shape classification (handbook Task 2)** and **force estimation (handbook Task 3)**. The original archive calls these “Task A” and “Task B”; neither refers to the separate group coursework Part B. This is a teaching subset, not the complete TacVerse benchmark. Counts, class IDs and statistics on this page describe this particular release.
+
+## Assessment scope
+
+The correct [Final Project Handbook](../resources/2026_2027_DL_Final_Project_Handbook_Shared.pdf) supplies the assessment requirements; the repository's [coursework guide](COURSEWORK_GUIDE.md) and [assessment overview](ASSESSMENT_OVERVIEW.md) follow it. The dataset statistics on this page are unchanged by the handbook correction.
+
+For **Part A**, train and validate only on this released coursework subset; do not add other TacVerse data or another tactile dataset. General-purpose pretrained weights such as ImageNet are allowed and must be cited. For **Part B**, neither this Part A subset nor the GelSight subsets of TacVerse may be used. These rules are specified in [handbook Section 11.3, PDF page 41](../resources/2026_2027_DL_Final_Project_Handbook_Shared.pdf#page=41). See [source wording notes](HANDBOOK_NOTES.md) for the conflicting shorthand in Section 6.5.
 
 ## Provenance and preparation
 
