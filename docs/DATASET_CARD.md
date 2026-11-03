@@ -1,8 +1,12 @@
-# Dataset card — Tactile Deep Learning Coursework, 2026–2027
+# Dataset Reference
 
-[Repository overview](../README.md) · [Coursework guide](COURSEWORK_GUIDE.md) · [Correct project handbook](../resources/2026_2027_DL_Final_Project_Handbook_Shared.pdf) · [Machine-readable validation](validation.json)
+2026–2027 Deep Learning Final Coursework · Part A
 
-## Release identity and intended use
+[Course overview](../README.md) · [Getting started](GETTING_STARTED.md) · [Part A guide](COURSEWORK_GUIDE.md) · [Project handbook](../resources/2026_2027_DL_Final_Project_Handbook_Shared.pdf) · [Validation record](validation.json)
+
+This reference describes the released tactile images, label schemas and measured distributions used for Part A. It also sets out the dataset's provenance, verification results and limits on the conclusions that can be drawn from coursework experiments.
+
+## Overview
 
 | Field | Value |
 |---|---|
@@ -17,13 +21,13 @@
 | Hidden evaluation data | Described in the supplied instructions; not included in this release |
 | Licence | No licence file supplied; no new licence assigned to source data or example code |
 
-Part A includes **shape classification (handbook Task 2)** and **force estimation (handbook Task 3)**. The original archive calls these “Task A” and “Task B”; neither refers to the separate group coursework Part B. This is a teaching subset, not the complete TacVerse benchmark. Counts, class IDs and statistics on this page describe this particular release.
+Part A includes shape classification (handbook Task 2) and force estimation (handbook Task 3). The original archive uses the legacy names “Task A” and “Task B” for these two learning tasks. The latter is distinct from the separate Part B group project. The released data form a teaching subset of TacVerse; all counts, class IDs and statistics on this page describe this release.
 
 ## Assessment scope
 
-The correct [Final Project Handbook](../resources/2026_2027_DL_Final_Project_Handbook_Shared.pdf) supplies the assessment requirements; the repository's [coursework guide](COURSEWORK_GUIDE.md) and [assessment overview](ASSESSMENT_OVERVIEW.md) follow it. The dataset statistics on this page are unchanged by the handbook correction.
+The [Final Project Handbook](../resources/2026_2027_DL_Final_Project_Handbook_Shared.pdf) defines the assessment requirements. The [Part A guide](COURSEWORK_GUIDE.md) and [assessment overview](ASSESSMENT_OVERVIEW.md) provide companion summaries and links to the relevant sections.
 
-For **Part A**, train and validate only on this released coursework subset; do not add other TacVerse data or another tactile dataset. General-purpose pretrained weights such as ImageNet are allowed and must be cited. For **Part B**, neither this Part A subset nor the GelSight subsets of TacVerse may be used. These rules are specified in [handbook Section 11.3, PDF page 41](../resources/2026_2027_DL_Final_Project_Handbook_Shared.pdf#page=41). See [source wording notes](HANDBOOK_NOTES.md) for the conflicting shorthand in Section 6.5.
+For Part A, train and validate only on this released coursework subset; do not add other TacVerse data or another tactile dataset. General-purpose pretrained weights such as ImageNet are allowed and must be cited. For Part B, neither this Part A subset nor the GelSight subsets of TacVerse may be used. These rules are specified in [handbook Section 11.3, PDF page 41](../resources/2026_2027_DL_Final_Project_Handbook_Shared.pdf#page=41). The [handbook wording notes](HANDBOOK_NOTES.md) identify the conflicting shorthand in Section 6.5.
 
 ## Provenance and preparation
 
@@ -32,9 +36,9 @@ The supplied [original README](ORIGINAL_DATASET_README.md) states that the image
 - `Shape_Classification/GelSight (no marker)`;
 - `Force_Regression/GelSight (with marker)`.
 
-It describes the images as resized to **320 × 240 pixels**, RGB JPEG. The release audit independently confirmed those dimensions, colour mode and encoding for every image. The source README also states that each shape class uses the same physical indenter and that each force contact provides a press image and a subsequent shear image.
+The source README describes the images as RGB JPEGs resized to 320 × 240 pixels. The release audit independently confirmed those dimensions, colour mode and encoding for every image. The source README also states that each shape class uses the same physical indenter and that each force contact provides a press image and a subsequent shear image.
 
-The source archive has been preserved byte for byte. No image has been cropped, relabelled, resized or removed for this publication. The additional preview figures combine selected images for display only. Browsable CSVs and submission examples in this repository are identical to their counterparts in the archive.
+The source archive is preserved byte for byte. Images and labels are unchanged. The preview figures combine selected images for display, and the browsable CSVs and original submission files are identical to their counterparts in the archive.
 
 The package does not include original high-resolution captures, raw video, acquisition timestamps, acquisition-session identifiers, the subset-selection script, calibration files, uncertainty estimates for the force labels or the unreleased test images. Do not infer those details from file numbering. For broader acquisition methodology, consult the [TacVerse paper](https://doi.org/10.1002/adrr.70169) and [source repository](https://github.com/LannWei/Tactile_Database).
 
@@ -49,9 +53,9 @@ The package does not include original high-resolution captures, raw video, acqui
 | Force labels | 2,000 rows | `filename,contact_id,is_shear,fx,fy,fz` |
 | Example submission | 5 files | Two Python scripts, dependency file and two `.pt` checkpoints |
 | Original dataset README | 1 file | Source documentation and coursework interface |
-| **Total** | **4,009 files** | **37,546,502 uncompressed bytes** |
+| Total | 4,009 files | 37,546,502 uncompressed bytes |
 
-The compressed archive is **37,441,246 bytes**, approximately **37.44 MB** using decimal units or **35.71 MiB** using binary units. This excludes any extra space taken by filesystem allocation, the repository documentation and software environments.
+The compressed archive is 37,441,246 bytes: approximately 37.44 MB using decimal units or 35.71 MiB using binary units. These figures exclude space used by filesystem allocation, repository documentation and software environments.
 
 ## Shape classification schema
 
@@ -78,7 +82,7 @@ For example, `images/cylinder/cylinder_0000.jpg,cylinder,0` resolves beneath `Ta
 | 8 | `triangle` | 200 |
 | 9 | `wave` | 200 |
 
-Use the class mapping supplied with this coursework, rather than deriving labels from an unrelated benchmark or an ordering chosen by a software library. The exact counts are balanced; that does not imply independent physical objects or an equal level of visual difficulty across classes.
+Use the supplied class mapping throughout preprocessing, training and inference. Class counts are balanced, but this does not establish independence between physical objects or equal visual difficulty across classes.
 
 ## Force estimation schema
 
@@ -93,18 +97,18 @@ Each row in `force_regression/labels.csv` describes one image and its force vect
 | `fy` | Float | Tangential force along the source sensor's y axis, in N |
 | `fz` | Float | Normal force, in N; negative values denote pressing into the sensor |
 
-Every contact has exactly these two observations:
+Every contact has exactly two observations:
 
 - `images/contact_NNNN.jpg`, with `is_shear=0`;
 - `images/contact_NNNN_shear.jpg`, with `is_shear=1`.
 
-There are **1,000 press images and 1,000 shear images**. The labels for a press/shear pair need not be equal: the lateral motion changes the measured loading. The word “normal” describes the acquisition condition; the measured `fx` and `fy` values are not identically zero.
+The release contains 1,000 press images and 1,000 shear images. The labels for a press/shear pair need not be equal because lateral motion changes the measured loading. “Normal press” describes the acquisition condition; measured `fx` and `fy` values are not identically zero.
 
-`contact_id` and `is_shear` support splitting and analysis. They are **not model input features for the hidden test**: the supplied instructions require prediction from anonymous images without those fields. The package does not provide a complete mapping from image axes to physical sensor axes. Avoid assuming that an arbitrary flip or rotation has an obvious force-label transformation.
+`contact_id` and `is_shear` support splitting and analysis. Hidden-test inference uses anonymous images without these metadata fields, so the model must predict from image content alone. The package does not provide a complete mapping from image axes to physical sensor axes. Any use of flips or rotations must therefore justify the corresponding force-label transformation.
 
 ## Measured force statistics
 
-These values were calculated directly from the **2,000 released label rows**, not copied from the broader source-recording summary in the original README. Values are in **newtons**. “SD” denotes sample standard deviation with denominator `n−1`. Rounded values below are for description; the CSVs retain their original precision.
+The following statistics were calculated directly from the 2,000 released label rows. They describe this coursework subset; the source-recording summary in the original README has a broader scope. Values are in newtons. “SD” denotes sample standard deviation with denominator `n−1`. Values are rounded for presentation; the CSVs retain their original precision.
 
 | Subset | Images | `fx` mean ± SD | `fy` mean ± SD | `fz` mean ± SD |
 |---|---:|---:|---:|---:|
@@ -120,11 +124,11 @@ These values were calculated directly from the **2,000 released label rows**, no
 
 All force labels are finite. All `fz` values in this release are negative. The smaller tangential variation in press images explains why a pooled error alone may conceal poor shear estimation; the coursework therefore requires separate press/shear evaluation.
 
-**Do not use the full-release means or standard deviations above to fit a model.** Estimate any target standardisation and the required mean-force baseline from the training subset only. These full-release statistics describe the dataset; they are not training parameters.
+Estimate target standardisation and the required mean-force baseline from the **training subset only**. The full-release statistics above describe the dataset and must not be used as fitted preprocessing parameters.
 
 ## Splits, evaluation and scope of claims
 
-The supplied protocol uses **60% training, 20% validation and 20% test**. Stratify shape splits by class. Split the force dataset by unique `contact_id` so that its two observations never cross split boundaries. With the required proportions, there are 600 / 200 / 200 force contacts and 1,200 / 400 / 400 force images.
+The required split is 60% training, 20% validation and 20% test. Stratify shape splits by class. Split the force dataset by unique `contact_id` so that its two observations remain in the same subset. These proportions yield 600 / 200 / 200 force contacts and 1,200 / 400 / 400 force images.
 
 A stratified image split for shapes evaluates held-out images of the represented class/indenter set. Because the source README states that one indenter provides each class, this does not establish generalisation to unseen physical objects. A contact-grouped force split prevents pair leakage, but does not by itself establish generalisation to new sensors, materials, sessions or loading ranges.
 
@@ -132,22 +136,22 @@ Use accuracy, macro precision/recall/F1 and a confusion matrix for shapes. Use p
 
 $$\mathrm{RMSE}_t = \sqrt{\frac{1}{N}\sum_{i=1}^{N}\left[(\hat f_{x,i}-f_{x,i})^2+(\hat f_{y,i}-f_{y,i})^2\right]}.$$
 
-This is the RMS length of the two-dimensional error vector. It is not the arithmetic average of the x- and y-axis RMSEs. See [the coursework guide](COURSEWORK_GUIDE.md) for the original metric code and complete reporting requirements.
+This metric is the RMS length of the two-dimensional error vector, rather than the arithmetic average of the x- and y-axis RMSEs. See the [Part A guide](COURSEWORK_GUIDE.md) for the original metric code and complete reporting requirements.
 
 ## Quality checks and limitations
 
 The release audit found:
 
-- all 4,000 images decode as **JPEG, RGB, 320 × 240**;
+- all 4,000 images decode as JPEG, RGB, 320 × 240;
 - every label points to an existing image, and no image is unlabelled;
 - all class IDs, names and class-folder assignments agree;
 - all 1,000 force contacts have exactly one press and one shear observation;
 - no duplicated CSV filenames, non-finite force values, exact duplicate image bytes or exact duplicate decoded pixel arrays;
 - no EXIF or ICC blocks in the JPEGs inspected.
 
-The audit does not rule out **near duplicates**, correlated acquisitions, systematic label error or distribution shift. There is no released session grouping for checking session-level independence. Image resizing and compression may reduce small contact details. The limited sensor variants and task-specific data do not support claims about unrestricted tactile sensing, unseen sensor hardware or general robotic manipulation without additional experiments.
+These checks do not rule out near duplicates, correlated acquisitions, systematic label error or distribution shift. Session identifiers are unavailable, which limits assessment of session-level independence. Image resizing and compression may reduce small contact details. The limited sensor variants and task-specific data do not support claims about unrestricted tactile sensing, unseen sensor hardware or general robotic manipulation without additional experiments.
 
-The example training script intentionally uses all released data to produce interface-demo checkpoints. Those checkpoints cannot establish valid performance on a subsequently created held-out split of these same released images. The source code and checkpoints are preserved; no model-performance claims are made by this publication.
+The example training script uses all released data to produce checkpoints for interface verification. Those checkpoints cannot establish valid performance on a subsequently created held-out split of the same images. The source code and checkpoints are preserved without model-performance claims.
 
 ## Versioning, reproducibility and attribution
 
@@ -159,4 +163,4 @@ Release `v1.0.0` preserves the provided ZIP bytes, with a normalised download fi
 
 The [download helper](../scripts/download_dataset.py) uses a version-specific URL and verifies the checksum before extraction. The [validation script](../scripts/verify_dataset.py) can check a local copy. Retain the release version, random seed, split membership, environment versions, preprocessing and trained weights with your experiment records.
 
-The dataset and source-paper acknowledgement are given in the [main README](../README.md#6-provenance-and-citation). The package did not include a licence; a public download and a scholarly citation do not assign new reuse terms to the data. Questions about reuse beyond the coursework should be directed to the teaching team or source rights holders.
+The [course overview](../README.md) and [citation record](../CITATION.cff) provide the dataset and source-paper acknowledgements. The package did not include a licence; public availability and scholarly citation do not assign new reuse terms to the data. Direct questions about reuse beyond the coursework to the teaching team or source rights holders.

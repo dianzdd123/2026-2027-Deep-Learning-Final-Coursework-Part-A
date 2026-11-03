@@ -1,22 +1,24 @@
-# Final project handbook and reading map
+# Project Handbook and Reading Guide
 
-[Repository overview](../README.md) · [Assessment overview](../docs/ASSESSMENT_OVERVIEW.md) · [Part A guide](../docs/COURSEWORK_GUIDE.md) · [Part B guide](../docs/PART_B_GUIDE.md)
+2026–2027 Deep Learning Final Coursework
 
-## Read the complete handbook
+[Course overview](../README.md) · [Getting started](../docs/GETTING_STARTED.md) · [Assessment overview](../docs/ASSESSMENT_OVERVIEW.md) · [Part A guide](../docs/COURSEWORK_GUIDE.md) · [Part B guide](../docs/PART_B_GUIDE.md)
 
-**[2026_2027_DL_Final_Project_Handbook_Shared.pdf](2026_2027_DL_Final_Project_Handbook_Shared.pdf)**
+## Course handbook
 
-This is the correct **51-page Deep Learning Final Project Handbook** for **2026/27**, supplied by the module leader. It covers individual **Part A** and the separate **Part B** group project. The PDF is preserved unchanged. Its cover states **Tuesday 10 November 2026** as the project release date; this is distinct from the repository publication and correction dates.
+[Read or download the Final Project Handbook](2026_2027_DL_Final_Project_Handbook_Shared.pdf)
 
-The module leader is **Dr Dandan Zhang**, Department of Bioengineering, Imperial College London; the teaching assistant is **Ms Lan Wei**. Use Canvas for submissions and module-team announcements. Contacts and the clarification process are in [Section 1.3, PDF page 5](2026_2027_DL_Final_Project_Handbook_Shared.pdf#page=5).
+The 51-page handbook for 2026/27 sets out the technical briefs, assessment criteria, submission requirements and academic integrity rules for individual Part A and the Part B group project. It also includes reference code and group-work templates. The PDF supplied by the module leader is preserved unchanged.
 
-The repository guides summarise and link to the PDF without setting additional assessment rules. Read the [source wording notes](../docs/HANDBOOK_NOTES.md) for passages whose scope needs clarification from the module team.
+The module leader is Dr Dandan Zhang, Department of Bioengineering, Imperial College London; the teaching assistant is Ms Lan Wei. Canvas is the platform for submissions and module-team announcements. Contacts and the clarification process are in [Section 1.3, PDF page 5](2026_2027_DL_Final_Project_Handbook_Shared.pdf#page=5).
 
-## Find the section you need
+The repository guides provide summaries and navigation without introducing additional assessment rules. The [handbook wording notes](../docs/HANDBOOK_NOTES.md) identify passages whose scope requires clarification from the module team.
 
-**PDF pages** refer to the viewer's page counter, including the cover. After the cover, the printed page number is one lower: PDF page 8 is printed page 7.
+## Handbook navigation
 
-| What you need | Handbook location | Repository companion |
+PDF pages below refer to the viewer's page counter, including the cover. After the cover, the printed page number is one lower: PDF page 8 is printed page 7.
+
+| Topic | Handbook location | Companion resource |
 |---|---|---|
 | Overview, contacts and materials | [Sections 1–2, PDF page 5](2026_2027_DL_Final_Project_Handbook_Shared.pdf#page=5) | [Main overview](../README.md) |
 | Deadlines, deliverables and required/optional work | [Sections 2.1–2.3, PDF page 7](2026_2027_DL_Final_Project_Handbook_Shared.pdf#page=7) | [Assessment overview](../docs/ASSESSMENT_OVERVIEW.md) |
@@ -35,20 +37,30 @@ The repository guides summarise and link to the PDF without setting additional a
 | Early bonus, late work and extensions | [Section 9.3, PDF page 35](2026_2027_DL_Final_Project_Handbook_Shared.pdf#page=35) | [Assessment overview](../docs/ASSESSMENT_OVERVIEW.md) |
 | Marking and peer moderation | [Section 10, PDF page 36](2026_2027_DL_Final_Project_Handbook_Shared.pdf#page=36) | [Assessment overview](../docs/ASSESSMENT_OVERVIEW.md) |
 | Academic integrity, AI use and permitted data | [Section 11, PDF page 40](2026_2027_DL_Final_Project_Handbook_Shared.pdf#page=40) | [Assessment overview](../docs/ASSESSMENT_OVERVIEW.md) and [wording notes](../docs/HANDBOOK_NOTES.md) |
-| Timeline and pitfalls | [Sections 12–13, PDF page 41](2026_2027_DL_Final_Project_Handbook_Shared.pdf#page=41) | Both task guides |
-| Submission checklists | [Section 14, PDF page 43](2026_2027_DL_Final_Project_Handbook_Shared.pdf#page=43) | Both task guides |
-| Frequently asked questions | [Section 15, PDF page 45](2026_2027_DL_Final_Project_Handbook_Shared.pdf#page=45) | Both task guides |
+| Timeline and pitfalls | [Sections 12–13, PDF page 41](2026_2027_DL_Final_Project_Handbook_Shared.pdf#page=41) | [Part A guide](../docs/COURSEWORK_GUIDE.md) and [Part B guide](../docs/PART_B_GUIDE.md) |
+| Submission checklists | [Section 14, PDF page 43](2026_2027_DL_Final_Project_Handbook_Shared.pdf#page=43) | [Part A guide](../docs/COURSEWORK_GUIDE.md) and [Part B guide](../docs/PART_B_GUIDE.md) |
+| Frequently asked questions | [Section 15, PDF page 45](2026_2027_DL_Final_Project_Handbook_Shared.pdf#page=45) | [Part A guide](../docs/COURSEWORK_GUIDE.md) and [Part B guide](../docs/PART_B_GUIDE.md) |
 | Split/metric code and group-work templates | [Appendix A, PDF page 47](2026_2027_DL_Final_Project_Handbook_Shared.pdf#page=47) | Original templates in the PDF |
 
-## Use the materials together
+## Recommended sequence
 
-For **Part A**, read Sections 2–3, use the exploration notebook to load images and labels, then create the required splits before fitting preprocessing. Compare the required architectures and use Sections 4–5 while writing the report and building the inference folder. Before submission, follow Section 9.1 and the Section 14 checklist.
+For Part A:
 
-For **Part B**, read Sections 6–8 with your group while Part A is under way. Choose an advanced problem and reading-list paper, agree a permitted dataset, complete the charter and develop a working proof of concept before recording. **Neither the Part A coursework data nor TacVerse's GelSight subsets may be used for Part B.**
+1. Read Sections 2–3 to establish the scope, deliverables and technical tasks.
+2. Follow [Getting started](../docs/GETTING_STARTED.md) and use the [exploration notebook](../notebooks/01_explore_dataset.ipynb) to inspect images and labels.
+3. Create the required data splits before fitting preprocessing, then compare the specified model architectures.
+4. Use Sections 4–5 to prepare the report and model folder.
+5. Complete the checks in Sections 9.1 and 14 before submitting through Canvas.
 
-The unchanged example scripts and weights demonstrate the prediction interface. Their example training uses all released images and does not provide held-out coursework results. The exploration notebook displays and checks data; students must develop their assessed models and report their own experiments.
+For Part B, read Sections 6–8 with the group while Part A is under way. Select an advanced problem and reading-list paper, agree a permitted dataset, complete the group charter and develop a working proof of concept before recording. Neither the Part A coursework data nor TacVerse's GelSight subsets may be used for Part B.
 
-## Original links and integrity
+### Role of the supporting code
+
+The exploration notebook supports dataset inspection and validation. The original submission scripts and checkpoints demonstrate the prediction interface; their example training uses all released images and cannot establish held-out coursework performance. Students must develop the assessed models and report their own experiments.
+
+## Document version and integrity
+
+The handbook cover states Tuesday 10 November 2026 as the project release date. This is the document's stated date, distinct from the repository publication and correction dates. The supplied PDF is unchanged.
 
 The handbook's materials table links to the upstream coursework repository. The same supplied dataset is available from [this repository's dataset release v1.0.0](https://github.com/dianzdd123/2026-2027-Deep-Learning-Final-Coursework-Part-A/releases/tag/v1.0.0), with unchanged bytes and checksum.
 

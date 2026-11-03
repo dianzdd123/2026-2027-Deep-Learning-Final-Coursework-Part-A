@@ -1,5 +1,13 @@
 # Changes
 
+## v1.0.2 — Course descriptions and student guidance
+
+- Reorganised the repository overview around the coursework purpose, learning objectives, recommended preparation and course materials.
+- Added a dedicated getting-started guide for Colab, local environments, dataset access and initial inspection.
+- Refined the Part A, Part B and assessment guides for consistent academic language, navigation and presentation of requirements.
+- Updated the dataset card, handbook reading map, submission-example documentation and notebook narrative.
+- Preserved the handbook, dataset, assessment requirements, executable code and model checkpoints.
+
 ## v1.0.1 — Correct handbook and comprehensive assessment guidance
 
 - Replaced the mistaken handbook with the supplied **51-page 2026/27 Deep Learning Final Project Handbook**, preserving the PDF bytes.
@@ -16,4 +24,4 @@
 - Published 4,000 tactile images, labels and submission examples.
 - Added the dataset card, measured statistics, sample images, exploration notebook and verification tools.
 
-Use the current handbook and v1.0.1 guidance for the coursework.
+Use the current handbook and repository guidance for the coursework. Dataset version `v1.0.0` remains unchanged across the documentation releases.
