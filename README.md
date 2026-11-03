@@ -18,7 +18,7 @@ The work connects model design with experimental practice. Students examine the 
 |---|---|
 | Module | Deep Learning |
 | Academic year | 2026–2027 |
-| Module leader | Dr Dandan Zhang |
+| Lecturer | Dr Dandan Zhang |
 | Teaching assistant | Ms Lan Wei |
 | Coursework component | Part A: individual technical coursework, 60 marks |
 | Submission | Report, code and models in one ZIP file on Canvas |
