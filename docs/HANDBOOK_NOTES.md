@@ -31,7 +31,8 @@ Seek clarification from the module team about the permitted experimental scope b
 ## 4. Dates, versions and source preservation
 
 - The cover states 2026/27, released Tuesday 10 November 2026. This is the PDF's stated project date, not the GitHub repository creation date.
-- Dataset v1.0.0 retains the original archive, published on 2 November 2026. Images, labels, the original dataset README, example scripts and checkpoints are unchanged.
+- Dataset content version 1.0.0 was first published on 2 November 2026. The unchanged archive and checksum are now distributed with release v1.0.2. Images, labels, the original dataset README, example scripts and checkpoints are unchanged.
 - Guidance v1.0.1 aligns the repository’s student materials with the 51-page handbook. Historical commits and the original dataset tag are retained.
 - Guidance v1.0.2 refines the course descriptions, resource navigation and student guidance. The handbook and assessment requirements remain unchanged.
+- Release v1.0.2 is the current public distribution. Earlier release listings are unpublished; their Git tags and commit history remain available for provenance.
 - The original dataset README is retained for provenance. Current instructions follow the 51-page handbook, including its mixed press/shear self-check sampling in place of the older every-100th-image example.

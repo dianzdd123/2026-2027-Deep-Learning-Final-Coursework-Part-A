@@ -8,7 +8,7 @@ This coursework develops practical experience in deep learning through two probl
 
 The work connects model design with experimental practice. Students examine the structure of the data, construct reproducible training and evaluation splits, compare alternative architectures, and interpret both successful predictions and failure cases. The final submission combines an evidence-based technical report with code and models that support independent evaluation.
 
-**[Project handbook](resources/2026_2027_DL_Final_Project_Handbook_Shared.pdf)** · **[Getting started](docs/GETTING_STARTED.md)** · **[Download dataset · 37.44 MB](https://github.com/dianzdd123/2026-2027-Deep-Learning-Final-Coursework-Part-A/releases/download/v1.0.0/Tactile_DL_2027.zip)** · **[Assessment and deadlines](docs/ASSESSMENT_OVERVIEW.md)**
+**[Project handbook](resources/2026_2027_DL_Final_Project_Handbook_Shared.pdf)** · **[Getting started](docs/GETTING_STARTED.md)** · **[Download dataset · 37.44 MB](https://github.com/dianzdd123/2026-2027-Deep-Learning-Final-Coursework-Part-A/releases/download/v1.0.2/Tactile_DL_2027.zip)** · **[Assessment and deadlines](docs/ASSESSMENT_OVERVIEW.md)**
 
 [![Open the exploration notebook in Google Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dianzdd123/2026-2027-Deep-Learning-Final-Coursework-Part-A/blob/main/notebooks/01_explore_dataset.ipynb)
 
@@ -81,7 +81,7 @@ A vision-based tactile sensor records the deformation of a compliant contact sur
 
 *Paired observations share a contact identifier and must remain in the same training, validation or test split.*
 
-The complete archive includes the images, labels, original dataset documentation and example submission files. Download it from the [dataset release](https://github.com/dianzdd123/2026-2027-Deep-Learning-Final-Coursework-Part-A/releases/download/v1.0.0/Tactile_DL_2027.zip). GitHub's **Code → Download ZIP** contains the repository documentation and utilities; the image archive is a separate release asset. See [Getting started](docs/GETTING_STARTED.md) for verified download and extraction instructions.
+The complete archive includes the images, labels, original dataset documentation and example submission files. Download it from the [dataset release](https://github.com/dianzdd123/2026-2027-Deep-Learning-Final-Coursework-Part-A/releases/download/v1.0.2/Tactile_DL_2027.zip). GitHub's **Code → Download ZIP** contains the repository documentation and utilities; the image archive is a separate release asset. See [Getting started](docs/GETTING_STARTED.md) for verified download and extraction instructions.
 
 The source archive uses the legacy names “Task A” and “Task B” for shape classification and force estimation. Both belong to the individual coursework **Part A**. They are distinct from the separate group project, **Part B**.
 
@@ -143,6 +143,6 @@ The archive is distributed unchanged. No licence file was included in the suppli
 
 ## Versions and support
 
-Dataset version `v1.0.0` retains its original download URL and SHA-256 checksum. The [dataset card](docs/DATASET_CARD.md) and [validation record](docs/validation.json) document the release checks. Documentation updates are recorded in the [changelog](CHANGELOG.md) and [latest release](https://github.com/dianzdd123/2026-2027-Deep-Learning-Final-Coursework-Part-A/releases/latest). The [handbook notes](docs/HANDBOOK_NOTES.md) record the document version and passages requiring module-team clarification.
+The complete dataset and its checksum are distributed with release `v1.0.2`. The archive preserves the original dataset version `1.0.0` byte for byte. The [dataset card](docs/DATASET_CARD.md) and [validation record](docs/validation.json) document the release checks. Documentation updates are recorded in the [changelog](CHANGELOG.md) and [latest release](https://github.com/dianzdd123/2026-2027-Deep-Learning-Final-Coursework-Part-A/releases/latest). The [handbook notes](docs/HANDBOOK_NOTES.md) record the document version and passages requiring module-team clarification.
 
 Use [GitHub Issues](https://github.com/dianzdd123/2026-2027-Deep-Learning-Final-Coursework-Part-A/issues) for access problems or documentation corrections. Direct assessment questions through the module's designated channels, and keep assessed solutions and student-identifying information out of public issues.

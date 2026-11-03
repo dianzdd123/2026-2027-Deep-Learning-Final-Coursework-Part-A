@@ -62,7 +62,7 @@ The exploration notebook supports dataset inspection and validation. The origina
 
 The handbook cover states Tuesday 10 November 2026 as the project release date. This is the document's stated date, distinct from the repository publication and correction dates. The supplied PDF is unchanged.
 
-The handbook's materials table links to the upstream coursework repository. The same supplied dataset is available from [this repository's dataset release v1.0.0](https://github.com/dianzdd123/2026-2027-Deep-Learning-Final-Coursework-Part-A/releases/tag/v1.0.0), with unchanged bytes and checksum.
+The handbook's materials table links to the upstream coursework repository. The same supplied dataset is available from [release v1.0.2](https://github.com/dianzdd123/2026-2027-Deep-Learning-Final-Coursework-Part-A/releases/tag/v1.0.2), with unchanged bytes and checksum.
 
 The handbook checksum is in [checksums.sha256](checksums.sha256):
 

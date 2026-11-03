@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "Please cite the TacVerse source paper below when using this coursework dataset, and identify coursework release v1.0.0 in your experiment records."
+message: "Please cite the TacVerse source paper below when using this coursework dataset. Record dataset content version 1.0.0, its checksum and the distribution release v1.0.2 in your experiment records."
 title: "2026–2027 Deep Learning Final Coursework — Part A"
 type: dataset
 version: 1.0.0

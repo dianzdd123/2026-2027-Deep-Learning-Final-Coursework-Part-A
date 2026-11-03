@@ -11,7 +11,7 @@ This reference describes the released tactile images, label schemas and measured
 | Field | Value |
 |---|---|
 | Coursework | 2026–2027 Deep Learning Final Coursework — Part A |
-| Release | `v1.0.0`, 2 November 2026 |
+| Dataset content version | `1.0.0`, first published 2 November 2026; distributed with release `v1.0.2` |
 | Repository maintainer | Dandan Zhang, Imperial College London |
 | Archive | `Tactile_DL_2027.zip` |
 | Extracted root | `Tactile_DL_2027/` |
@@ -155,7 +155,7 @@ The example training script uses all released data to produce checkpoints for in
 
 ## Versioning, reproducibility and attribution
 
-Release `v1.0.0` preserves the provided ZIP bytes, with a normalised download filename:
+Release `v1.0.2` distributes the unchanged dataset content version `1.0.0`, first published on 2 November 2026. The ZIP retains its original bytes and checksum:
 
 ```text
 1a1620e4695b220043318e7b209202940b930fcf82f69b4f761213255c6b4ca5  Tactile_DL_2027.zip

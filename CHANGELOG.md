@@ -2,6 +2,8 @@
 
 ## v1.0.2 — Course descriptions and student guidance
 
+- Consolidated the public release under v1.0.2, including the unchanged dataset archive and checksum; earlier release listings are removed while their Git tags and commit history are retained.
+- Updated dataset links and the download helper to use the v1.0.2 assets.
 - Reorganised the repository overview around the coursework purpose, learning objectives, recommended preparation and course materials.
 - Added a dedicated getting-started guide for Colab, local environments, dataset access and initial inspection.
 - Refined the Part A, Part B and assessment guides for consistent academic language, navigation and presentation of requirements.

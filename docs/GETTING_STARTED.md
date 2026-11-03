@@ -61,7 +61,7 @@ The repository requirements cover data exploration and integrity checks. PyTorch
 
 ### Use an existing archive
 
-Download [`Tactile_DL_2027.zip`](https://github.com/dianzdd123/2026-2027-Deep-Learning-Final-Coursework-Part-A/releases/download/v1.0.0/Tactile_DL_2027.zip) directly, or use an existing copy. The helper verifies the archive before extraction:
+Download [`Tactile_DL_2027.zip`](https://github.com/dianzdd123/2026-2027-Deep-Learning-Final-Coursework-Part-A/releases/download/v1.0.2/Tactile_DL_2027.zip) directly, or use an existing copy. The helper verifies the archive before extraction:
 
 ```bash
 python scripts/download_dataset.py --archive /path/to/Tactile_DL_2027.zip
@@ -114,7 +114,7 @@ The supplied training script uses all released images to demonstrate the submiss
 
 ## Archive integrity
 
-The downloader verifies both file size and SHA-256 before extracting dataset version `v1.0.0`:
+The downloader retrieves the archive from release `v1.0.2` and verifies both file size and SHA-256 before extraction. Its contents remain identical to dataset version `1.0.0`:
 
 ```text
 1a1620e4695b220043318e7b209202940b930fcf82f69b4f761213255c6b4ca5  Tactile_DL_2027.zip

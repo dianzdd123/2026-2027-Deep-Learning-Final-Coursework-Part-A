@@ -26,7 +26,7 @@ ARCHIVE_NAME = f"{DATASET_NAME}.zip"
 RELEASE_URL = (
     "https://github.com/dianzdd123/"
     "2026-2027-Deep-Learning-Final-Coursework-Part-A/"
-    "releases/download/v1.0.0/Tactile_DL_2027.zip"
+    "releases/download/v1.0.2/Tactile_DL_2027.zip"
 )
 EXPECTED_BYTES = 37_441_246
 EXPECTED_SHA256 = "1a1620e4695b220043318e7b209202940b930fcf82f69b4f761213255c6b4ca5"
@@ -45,7 +45,7 @@ def check_archive(path: Path) -> None:
         for chunk in iter(lambda: stream.read(CHUNK_BYTES), b""):
             digest.update(chunk)
     if digest.hexdigest() != EXPECTED_SHA256:
-        raise ValueError("SHA-256 mismatch. Download a fresh copy of the v1.0.0 archive.")
+        raise ValueError("SHA-256 mismatch. Download a fresh copy of the archive from release v1.0.2.")
     print(f"SHA-256 verified: {EXPECTED_SHA256}")
 
 
