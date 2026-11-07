@@ -2,7 +2,7 @@
 
 [Course overview](../README.md) · [Dataset card](DATASET_CARD.md) · [Part A assignment guide](COURSEWORK_GUIDE.md) · [Assessment overview](ASSESSMENT_OVERVIEW.md)
 
-This guide explains how to obtain the coursework dataset, verify its integrity and inspect the images and labels. Use either Google Colab or a local Python environment. Both routes use the same versioned archive and the same exploration notebook.
+This practical guide accompanies the Deep Learning module of Imperial's [I-X MSc Artificial Intelligence Applications and Innovation](https://www.imperial.ac.uk/study/courses/postgraduate-taught/2026/applications-innovation/). It explains how to obtain the coursework dataset, verify its integrity and inspect the images and labels. Use either Google Colab or a local Python environment. Both routes use the same versioned archive and the same exploration notebook.
 
 The released dataset contains 2,000 shape-classification images and 2,000 force-estimation images, together with labels and submission examples. The download is 37,441,246 bytes, approximately 37.44 MB. The extracted folder is named `Tactile_DL_2027`.
 

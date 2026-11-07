@@ -10,7 +10,7 @@ This reference describes the released tactile images, label schemas and measured
 
 | Field | Value |
 |---|---|
-| Coursework | 2026–2027 Deep Learning Final Coursework — Part A |
+| Coursework | 2026–2027 Deep Learning Final Coursework : Part A |
 | Dataset content version | `1.0.0`, first published 2 November 2026; distributed with release `v1.0.2` |
 | Repository maintainer | Dandan Zhang, Imperial College London |
 | Archive | `Tactile_DL_2027.zip` |

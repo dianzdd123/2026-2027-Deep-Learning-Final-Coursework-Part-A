@@ -4,10 +4,10 @@
 
 ## Source materials reviewed
 
-1. **Tactile_DL_2027.zip** — user-provided archive, 37,441,246 bytes, SHA-256 `1a1620e4695b220043318e7b209202940b930fcf82f69b4f761213255c6b4ca5`. Its original `README.md`, labels, image files and example-submission code remain unchanged.
-2. **Deep Learning Final Project 2026/27 — Simplified Handbook**, 9 pages, dated 10 November 2026 — uploaded in this conversation.
-3. **Deep Learning Final Project — Key Information Student Briefing**, 27 slides, dated 10 November 2026 — uploaded in this conversation.
-4. **Earlier Final Project Handbook** (51-page PDF retained in `resources/`) — contains provisions that differ from documents (2) and (3).
+1. **Tactile_DL_2027.zip** : user-provided archive, 37,441,246 bytes, SHA-256 `1a1620e4695b220043318e7b209202940b930fcf82f69b4f761213255c6b4ca5`. Its original `README.md`, labels, image files and example-submission code remain unchanged.
+2. **Deep Learning Final Project 2026/27 : Simplified Handbook**, 9 pages, dated 10 November 2026 : uploaded in this conversation.
+3. **Deep Learning Final Project : Key Information Student Briefing**, 27 slides, dated 10 November 2026 : uploaded in this conversation.
+4. **Earlier Final Project Handbook** (51-page PDF retained in `resources/`) : contains provisions that differ from documents (2) and (3).
 
 The **new simplified handbook explicitly says the full handbook takes precedence if they differ** and that Canvas is the place for course-wide clarifications. Therefore repository text explains observed differences rather than declaring an unverified policy change. The newly supplied PDFs are the basis of the orientation pages, but **they are not currently bundled as GitHub release assets**; access official copies via Canvas.
 

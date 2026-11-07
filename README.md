@@ -1,24 +1,39 @@
-# Deep Learning | Final Project 2026–2027
-### Part A — Shape Classification and 3D Force Estimation from Tactile Images
+# Deep Learning: Final Project 2026–2027
+### Part A: Shape Classification and 3D Force Estimation from Tactile Images
 
-**Imperial College London · Department of Bioengineering**  
+**Imperial College London | I-X MSc Artificial Intelligence Applications and Innovation (AIAI)**  
+**Deep Learning module | Academic year 2026–2027**  
 **Lecturer:** Dr Dandan Zhang · **Teaching assistant:** Ms Lan Wei
 
-This repository distributes the **Part A tactile dataset, example inference code and practical learning resources** for the 2026–2027 Deep Learning Final Project. Students investigate two supervised learning problems using GelSight tactile images: recognising contact geometry and estimating three-dimensional contact forces. The emphasis is on sound experimental design, reproducible comparisons, scientifically meaningful evaluation and reliable submission code.
+This repository supports the **Deep Learning** module within Imperial College London's [MSc Artificial Intelligence Applications and Innovation (AIAI)](https://www.imperial.ac.uk/study/courses/postgraduate-taught/2026/applications-innovation/), taught in the [I-X interdisciplinary AI environment](https://ix.imperial.ac.uk/masters-programme). In this part of the final coursework, students work with real tactile-sensor images rather than conventional object photographs. The images show how a soft sensor surface changes when an object presses or slides across it, providing evidence about shape and contact force.
+
+Students use these observations to build and compare deep-learning models for two tasks: recognising ten contact shapes and estimating the three components of contact force. The project connects techniques from the Deep Learning module with the AIAI programme's emphasis on applying AI to real engineering problems. It asks students not only to train a model, but also to explain what the data can tell them, how to evaluate their results fairly and what the model might struggle with on unseen examples.
+
+This is the **Part A dataset and starter-code repository**. Official handbooks, briefing slides, assessment announcements and submissions remain on Canvas. The GitHub materials help students begin the practical work without replacing those formal instructions.
 
 **[Download the dataset (37.44 MB)](https://github.com/dianzdd123/2026-2027-Deep-Learning-Final-Coursework-Part-A/releases/download/v1.0.2/Tactile_DL_2027.zip)** · **[Getting started](docs/GETTING_STARTED.md)** · **[Part A assignment guide](docs/COURSEWORK_GUIDE.md)** · **[Assessment information](docs/ASSESSMENT_OVERVIEW.md)**
 
 [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dianzdd123/2026-2027-Deep-Learning-Final-Coursework-Part-A/blob/main/notebooks/01_explore_dataset.ipynb)
 
+## Course and programme links
+
+- [MSc Artificial Intelligence Applications and Innovation (Imperial course page)](https://www.imperial.ac.uk/study/courses/postgraduate-taught/2026/applications-innovation/): programme overview and its teaching structure, including the Deep Learning module.
+- [I-X Master's programme](https://ix.imperial.ac.uk/masters-programme): context for the interdisciplinary programme and its focus on practical applications of AI.
+- [Part A dataset release](https://github.com/dianzdd123/2026-2027-Deep-Learning-Final-Coursework-Part-A/releases/latest): data for the shape and force tasks in this coursework.
+
 ## Where to find the course materials
 
 | Platform | Materials and actions |
 |---|---|
-| **GitHub — this repository** | Part A dataset release, dataset documentation, exploration notebook, starter code, and download/verification tools |
-| **Canvas — module site** | Current Final Project Handbook, simplified handbook, briefing slides, announcements and clarifications, Part B group registration, submissions and peer assessment |
+| **GitHub : this repository** | Part A dataset release, dataset documentation, exploration notebook, starter code, and download/verification tools |
+| **Canvas : module site** | Current Final Project Handbook, simplified handbook, briefing slides, announcements and clarifications, Part B group registration, submissions and peer assessment |
 | **GitHub release v1.0.2** | [Complete tactile dataset](https://github.com/dianzdd123/2026-2027-Deep-Learning-Final-Coursework-Part-A/releases/download/v1.0.2/Tactile_DL_2027.zip), [checksum](https://github.com/dianzdd123/2026-2027-Deep-Learning-Final-Coursework-Part-A/releases/download/v1.0.2/checksums.sha256), and [course materials archive](https://github.com/dianzdd123/2026-2027-Deep-Learning-Final-Coursework-Part-A/releases/download/v1.0.2/Coursework_Materials_v1.0.2.zip) |
 
 **Source and version note:** The newly provided *Simplified Handbook 2026/27* and *Key Information Student Briefing* are dated **10 November 2026**. Earlier comprehensive repository guides and a previously uploaded full handbook disagree on some provisions, notably **Part B group size (4–6 versus 5–6)** and **bonus cap (+5 versus +15)**. This README follows the newly provided documents for orientation; the simplified handbook itself says the *full handbook* takes precedence where texts differ. **Use current Canvas announcements for any binding clarification.** See [Source alignment and discrepancies](docs/SOURCE_ALIGNMENT.md). We have not silently altered the original PDFs.
+
+## Why tactile sensing?
+
+Most image-classification examples ask a network to recognise something visible, such as a car or a cat. Tactile images pose a different question: what can a robot infer from the deformation of its fingertip? A shallow indentation can be difficult to distinguish from noise, while the small movements of printed markers carry information about sideways force. These features make the dataset a useful setting for learning how model architecture, preprocessing and evaluation choices affect a practical AI system.
 
 ## Learning objectives
 
@@ -48,9 +63,9 @@ The data archive's older internal labels “Task A” (shape) and “Task B” (
 
 | Component | Assessment | Marks | Deadline (23:59 GMT) |
 |---|---|---:|---|
-| **Part A — individual** | Data preparation (10), shape classification (20), force estimation (20), technical report (10) | 60 | **Sunday 13 December 2026** |
-| **Part B — group** | Advanced tactile perception project with a working proof-of-concept and a video of at most five minutes | 40 | **Sunday 20 December 2026** |
-| **Peer assessment** | Each Part B member completes the Canvas form | — | **Wednesday 23 December 2026** |
+| **Part A : individual** | Data preparation (10), shape classification (20), force estimation (20), technical report (10) | 60 | **Sunday 13 December 2026** |
+| **Part B : group** | Advanced tactile perception project with a working proof-of-concept and a video of at most five minutes | 40 | **Sunday 20 December 2026** |
+| **Peer assessment** | Each Part B member completes the Canvas form | : | **Wednesday 23 December 2026** |
 
 In the **newly supplied simplified handbook and briefing**, groups comprise **4–6 students** and the only listed bonus is up to **five marks for systematic hyperparameter tuning** (Part A Task 4). The earlier full handbook differs; follow module-team clarification on Canvas. [Assessment overview](docs/ASSESSMENT_OVERVIEW.md).
 
@@ -90,4 +105,4 @@ Part A is individual: do not publish or share assessed student code, weights, re
 
 Questions: **Dr Dandan Zhang** (`d.zhang17@imperial.ac.uk`) or **Ms Lan Wei** (`l.wei24@imperial.ac.uk`). Email subject: `[2026-Deep-Learning-Inquiry]-[Name]`. Use [GitHub Issues](https://github.com/dianzdd123/2026-2027-Deep-Learning-Final-Coursework-Part-A/issues) for repository access problems only; do not post assessed solutions or identifying information.
 
-**Source:** TacVerse — Wei, L. *et al.* (2026), *Advanced Robotics Research*, e70169. [DOI: 10.1002/adrr.70169](https://doi.org/10.1002/adrr.70169). The supplied archive is preserved unchanged and does not include a new reuse licence. [Dataset card](docs/DATASET_CARD.md) · [Citation metadata](CITATION.cff) · [Latest public release](https://github.com/dianzdd123/2026-2027-Deep-Learning-Final-Coursework-Part-A/releases/latest).
+**Source:** TacVerse : Wei, L. *et al.* (2026), *Advanced Robotics Research*, e70169. [DOI: 10.1002/adrr.70169](https://doi.org/10.1002/adrr.70169). The supplied archive is preserved unchanged and does not include a new reuse licence. [Dataset card](docs/DATASET_CARD.md) · [Citation metadata](CITATION.cff) · [Latest public release](https://github.com/dianzdd123/2026-2027-Deep-Learning-Final-Coursework-Part-A/releases/latest).

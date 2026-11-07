@@ -1,10 +1,10 @@
-# Part A — Individual technical coursework
+# Part A : Individual technical coursework
 
 [Home](../README.md) · [Getting started](GETTING_STARTED.md) · [Dataset card](DATASET_CARD.md) · [Assessment](ASSESSMENT_OVERVIEW.md)
 
 **Shape classification and 3D contact-force estimation from GelSight images** · **60 marks** · **Due Sunday 13 December 2026 at 23:59 GMT via Canvas**.
 
-The aim is to develop, compare and explain deep-learning models using physical tactile observations. It is not enough to present a high test score: document the data split, architecture decisions, fair experimental comparisons, error patterns and limits of generalisation.
+This assignment forms the individual Part A component of Deep Learning within Imperial's [I-X MSc Artificial Intelligence Applications and Innovation](https://www.imperial.ac.uk/study/courses/postgraduate-taught/2026/applications-innovation/). The aim is to develop, compare and explain deep-learning models using physical tactile observations. It is not enough to present a high test score: document the data split, architecture decisions, fair experimental comparisons, error patterns and limits of generalisation.
 
 ## 1. Data and access
 
@@ -19,17 +19,17 @@ The aim is to develop, compare and explain deep-learning models using physical t
 
 Shape classes: 0 cylinder; 1 dots; 2 hexagon; 3 line; 4 moon; 5 rectangle; 6 ring; 7 small_sphere; 8 triangle; 9 wave. `fx` and `fy` denote tangential force; `fz` denotes normal force, with negative `fz` indicating pressing into the sensor.
 
-## 2. Required experimental design (Task 1 — 10 marks)
+## 2. Required experimental design (Task 1 : 10 marks)
 
 Inspect images and label associations; visualise class counts and force distributions, distinguishing press and shear. Make **60/20/20 train/validation/test splits**: stratify shape classes; for force split **by `contact_id`** so paired observations never cross sets. Fit any data-dependent normalisation on **training data only**. Store the split identifiers and random seed. Use the test set only for final evaluation.
 
 A meaningful comparison holds splits and evaluation conditions fixed. Image flips or rotations may change force-vector labels and should not be applied without physical justification. Do not train on any extra tactile dataset: Part A uses only the released coursework data (general-purpose ImageNet pretraining is permitted with citation).
 
-## 3. Shape classification (Task 2 — 20 marks)
+## 3. Shape classification (Task 2 : 20 marks)
 
 Implement and compare **at least three distinct CNN architectures**, including a clear baseline and models that genuinely differ in design. For each, report model size, training/inference timings with hardware, accuracy, **macro precision, macro recall, macro F1**, and a confusion matrix. Inspect misclassified images, interpret shape confusions and discuss the generalisation limits of a random image split.
 
-## 4. Force estimation (Task 3 — 20 marks)
+## 4. Force estimation (Task 3 : 20 marks)
 
 Compare **at least two models** predicting `fx, fy, fz` from a **single anonymous image**. Standardise targets using training statistics and convert predictions back to **newtons** for evaluation. Report RMSE for each axis and overall. For both **press** (`is_shear=0`) and **shear** (`is_shear=1`) subsets, report tangential vector error:
 
@@ -41,7 +41,7 @@ For shear images show predicted-versus-true `fx` and `fy` plots with the `y=x` r
 
 **Never use `contact_id`, `is_shear`, image filenames or test labels as prediction features.**
 
-## 5. Technical report (Task 5 — 10 marks)
+## 5. Technical report (Task 5 : 10 marks)
 
 Write a **3–6-page IEEE conference-format, double-column** report: Abstract, Introduction, Objectives, Methodology, Experiments, Evaluation, Conclusions and Future Work, followed by references and an AI-use declaration. Include the split protocol, sample images/label distributions, architecture comparisons, training curves, confusion matrix, force RMSE, press/shear tangential error, shear scatter plots and analysis of errors. Cite TacVerse and all reused architectures, pretrained weights and code.
 

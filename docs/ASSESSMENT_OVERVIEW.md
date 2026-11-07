@@ -2,14 +2,14 @@
 
 [Course homepage](../README.md) · [Part A](COURSEWORK_GUIDE.md) · [Part B](PART_B_GUIDE.md) · [Source comparison](SOURCE_ALIGNMENT.md)
 
-This page summarises the **newly uploaded 9-page Simplified Handbook and 27-slide Student Briefing (10 November 2026)**. Both describe a 100-mark assessment comprising individual Part A (60) and group Part B (40). The simplified handbook says that if its provisions differ from the full handbook, the full handbook applies. Because the older full handbook currently stored here contains differences, **confirm the effective policy on Canvas** rather than relying on an undocumented choice of version.
+This assessment belongs to the Deep Learning module of Imperial's [I-X MSc Artificial Intelligence Applications and Innovation](https://www.imperial.ac.uk/study/courses/postgraduate-taught/2026/applications-innovation/). This page summarises the **newly uploaded 9-page Simplified Handbook and 27-slide Student Briefing (10 November 2026)**. Both describe a 100-mark assessment comprising individual Part A (60) and group Part B (40). The simplified handbook says that if its provisions differ from the full handbook, the full handbook applies. Because the older full handbook currently stored here contains differences, **confirm the effective policy on Canvas** rather than relying on an undocumented choice of version.
 
 ## Assessment structure
 
 | Component | Value | Core deliverable | Deadline |
 |---|---:|---|---|
-| Part A — individual | 60 | 3–6-page IEEE report, code and CID-named model folder with `predict.py` in one ZIP | 13 December 2026, 23:59 GMT |
-| Part B — group | 40 | ≤5-minute video, reproducible proof-of-concept code, contributions/AI-use form | 20 December 2026, 23:59 GMT |
+| Part A : individual | 60 | 3–6-page IEEE report, code and CID-named model folder with `predict.py` in one ZIP | 13 December 2026, 23:59 GMT |
+| Part B : group | 40 | ≤5-minute video, reproducible proof-of-concept code, contributions/AI-use form | 20 December 2026, 23:59 GMT |
 | Peer assessment | Moderates Part B | Each group member submits the Canvas form | 23 December 2026, 23:59 GMT |
 
 **Newer brief:** Part B groups of **4–6**; only bonus is up to **+5** for Part A Task 4 hyperparameter tuning; final result capped at 100. The older full handbook states groups of **5–6** and bonuses capped at **+15**. These require a single definitive Canvas clarification; do not apply the old +15 scheme solely because historical repository pages mention it.
@@ -31,11 +31,11 @@ This page summarises the **newly uploaded 9-page Simplified Handbook and 27-slid
 
 | Task | Marks | Evidence |
 |---|---:|---|
-| 1 — preparation | 10 | Image/label loading and association (4); exploratory data analysis (3); normalisation and leakage-free splits (3) |
-| 2 — shape classification | 20 | ≥3 CNN architectures; meaningful accuracy/efficiency comparison; macro precision, recall, F1 and confusion matrix; failure analysis |
-| 3 — force estimation | 20 | ≥2 architectures; RMSE per axis and overall in newtons; press/shear tangential analysis and interpretation |
-| 5 — technical report | 10 | IEEE double-column, 3–6 pages; clear methods, figures, evaluation and limitations |
-| 4 — optional tuning | Up to +5 | Systematic validation-based search with documented budget, comparisons and justification |
+| 1 : preparation | 10 | Image/label loading and association (4); exploratory data analysis (3); normalisation and leakage-free splits (3) |
+| 2 : shape classification | 20 | ≥3 CNN architectures; meaningful accuracy/efficiency comparison; macro precision, recall, F1 and confusion matrix; failure analysis |
+| 3 : force estimation | 20 | ≥2 architectures; RMSE per axis and overall in newtons; press/shear tangential analysis and interpretation |
+| 5 : technical report | 10 | IEEE double-column, 3–6 pages; clear methods, figures, evaluation and limitations |
+| 4 : optional tuning | Up to +5 | Systematic validation-based search with documented budget, comparisons and justification |
 
 The **simplified handbook** describes a training-mean force baseline as **recommended**; the earlier full handbook treats it as required. The repository guide labels it accordingly and flags the discrepancy. No other bonus scheme is stated in the newer materials.
 

@@ -1,4 +1,4 @@
-# Part B — Advanced tactile perception project
+# Part B : Advanced tactile perception project
 
 [Home](../README.md) · [Assessment](ASSESSMENT_OVERVIEW.md) · [Source comparison](SOURCE_ALIGNMENT.md)
 
