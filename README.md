@@ -1,148 +1,93 @@
-# Deep Learning — Final Coursework 2026–2027
+# Deep Learning | Final Project 2026–2027
+### Part A — Shape Classification and 3D Force Estimation from Tactile Images
 
-## Part A: Learning from Tactile Images
+**Imperial College London · Department of Bioengineering**  
+**Lecturer:** Dr Dandan Zhang · **Teaching assistant:** Ms Lan Wei
 
-**Imperial College London · Department of Bioengineering**
+This repository distributes the **Part A tactile dataset, example inference code and practical learning resources** for the 2026–2027 Deep Learning Final Project. Students investigate two supervised learning problems using GelSight tactile images: recognising contact geometry and estimating three-dimensional contact forces. The emphasis is on sound experimental design, reproducible comparisons, scientifically meaningful evaluation and reliable submission code.
 
-This coursework develops practical experience in deep learning through two problems in tactile perception: recognising object shape and estimating contact forces from images. Using a curated subset of the TacVerse dataset, students design, train and evaluate neural networks for multiclass classification and three-dimensional regression.
+**[Download the dataset (37.44 MB)](https://github.com/dianzdd123/2026-2027-Deep-Learning-Final-Coursework-Part-A/releases/download/v1.0.2/Tactile_DL_2027.zip)** · **[Getting started](docs/GETTING_STARTED.md)** · **[Part A assignment guide](docs/COURSEWORK_GUIDE.md)** · **[Assessment information](docs/ASSESSMENT_OVERVIEW.md)**
 
-The work connects model design with experimental practice. Students examine the structure of the data, construct reproducible training and evaluation splits, compare alternative architectures, and interpret both successful predictions and failure cases. The final submission combines an evidence-based technical report with code and models that support independent evaluation.
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dianzdd123/2026-2027-Deep-Learning-Final-Coursework-Part-A/blob/main/notebooks/01_explore_dataset.ipynb)
 
-**[Project handbook](resources/2026_2027_DL_Final_Project_Handbook_Shared.pdf)** · **[Getting started](docs/GETTING_STARTED.md)** · **[Download dataset · 37.44 MB](https://github.com/dianzdd123/2026-2027-Deep-Learning-Final-Coursework-Part-A/releases/download/v1.0.2/Tactile_DL_2027.zip)** · **[Assessment and deadlines](docs/ASSESSMENT_OVERVIEW.md)**
+## Where to find the course materials
 
-[![Open the exploration notebook in Google Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/dianzdd123/2026-2027-Deep-Learning-Final-Coursework-Part-A/blob/main/notebooks/01_explore_dataset.ipynb)
-
-## Course information
-
-| Item | Details |
+| Platform | Materials and actions |
 |---|---|
-| Module | Deep Learning |
-| Academic year | 2026–2027 |
-| Lecturer | Dr Dandan Zhang |
-| Teaching assistant | Ms Lan Wei |
-| Coursework component | Part A: individual technical coursework, 60 marks |
-| Submission | Report, code and models in one ZIP file on Canvas |
-| Deadline | Sunday 13 December 2026, 23:59 UK time (GMT) |
-| Computing environment | Python; Google Colab or a local notebook environment |
+| **GitHub — this repository** | Part A dataset release, dataset documentation, exploration notebook, starter code, and download/verification tools |
+| **Canvas — module site** | Current Final Project Handbook, simplified handbook, briefing slides, announcements and clarifications, Part B group registration, submissions and peer assessment |
+| **GitHub release v1.0.2** | [Complete tactile dataset](https://github.com/dianzdd123/2026-2027-Deep-Learning-Final-Coursework-Part-A/releases/download/v1.0.2/Tactile_DL_2027.zip), [checksum](https://github.com/dianzdd123/2026-2027-Deep-Learning-Final-Coursework-Part-A/releases/download/v1.0.2/checksums.sha256), and [course materials archive](https://github.com/dianzdd123/2026-2027-Deep-Learning-Final-Coursework-Part-A/releases/download/v1.0.2/Coursework_Materials_v1.0.2.zip) |
 
-The [Final Project Handbook](resources/2026_2027_DL_Final_Project_Handbook_Shared.pdf) defines the assessment requirements. These repository materials explain the dataset and support implementation. Consult Canvas for module-team announcements and subsequent clarifications.
+**Source and version note:** The newly provided *Simplified Handbook 2026/27* and *Key Information Student Briefing* are dated **10 November 2026**. Earlier comprehensive repository guides and a previously uploaded full handbook disagree on some provisions, notably **Part B group size (4–6 versus 5–6)** and **bonus cap (+5 versus +15)**. This README follows the newly provided documents for orientation; the simplified handbook itself says the *full handbook* takes precedence where texts differ. **Use current Canvas announcements for any binding clarification.** See [Source alignment and discrepancies](docs/SOURCE_ALIGNMENT.md). We have not silently altered the original PDFs.
 
 ## Learning objectives
 
-By completing the Part A tasks, students will practise how to:
+Students should be able to frame image classification and force regression tasks; inspect images and labels; build non-leaking 60/20/20 splits; compare CNN architectures with controlled experimental conditions; interpret classification and physical-force errors; and package a reproducible inference pipeline that can operate on unseen anonymous images.
 
-- Formulate tactile perception as supervised classification and regression problems.
-- Inspect image data and labels, identify dependencies between samples, and construct valid evaluation splits.
-- Implement and compare neural-network architectures under a consistent experimental protocol.
-- Select models using validation evidence and evaluate generalisation on held-out data.
-- Interpret classification errors and force-estimation errors, including the distinction between normal and tangential forces.
-- Communicate methodological choices and limitations, and package a reproducible inference pipeline.
+## Data at a glance
 
-### Recommended preparation
-
-Useful preparation includes Python programming, array operations, basic linear algebra, and the concepts of loss functions, gradient-based optimisation, overfitting and regularisation. Familiarity with convolutional neural networks and training, validation and test sets will support the project work. The [exploration notebook](notebooks/01_explore_dataset.ipynb) introduces this dataset's organisation and labels before model development begins.
-
-## Course materials
-
-| Resource | Purpose |
-|---|---|
-| [Final Project Handbook](resources/2026_2027_DL_Final_Project_Handbook_Shared.pdf) | Assessment specification for Parts A and B, including marking criteria and submission policies |
-| [Handbook reading map](resources/README.md) | Direct links to the relevant handbook sections and PDF pages |
-| [Getting started](docs/GETTING_STARTED.md) | Dataset access, environment setup and the first data-inspection steps |
-| [Dataset card](docs/DATASET_CARD.md) | Provenance, file structure, label definitions, measured statistics and limitations |
-| [Part A assignment guide](docs/COURSEWORK_GUIDE.md) | Required experiments, evaluation measures, report structure and submission interface |
-| [Assessment overview](docs/ASSESSMENT_OVERVIEW.md) | Dates, deliverables, marks, optional bonuses and academic-integrity requirements |
-| [Exploration notebook](notebooks/01_explore_dataset.ipynb) | Guided loading, verification and visual inspection of the released data |
-| [Submission example](example_submission/) | Reference interface for loading model weights and producing prediction files |
-
-Guidance for the separate group project is provided in the [Part B project guide](docs/PART_B_GUIDE.md).
-
-## Dataset
-
-The release contains 4,000 RGB tactile images at 320 × 240 pixels. The two tasks use different GelSight sensor configurations and target representations.
-
-| Property | Shape classification | Force estimation |
+| | Shape classification | 3D force estimation |
 |---|---|---|
-| Handbook task | Task 2 | Task 3 |
-| Learning problem | Ten-class image classification | Three-output regression |
-| Sensor configuration | GelSight without markers | GelSight with markers |
-| Images | 2,000; 200 per class | 2,000; 1,000 paired contacts |
-| Target | Class ID from 0 to 9 | Force vector `fx`, `fy`, `fz`, in newtons (N) |
-| Relationship between samples | Images grouped by shape class | A press image and a shear image for each `contact_id` |
-| Evaluation split | Stratified by class | Grouped by contact |
+| Sensor | GelSight without markers | GelSight with markers |
+| Released images | 2,000 RGB JPEGs | 2,000 RGB JPEGs (1,000 contacts × press/shear pairs) |
+| Resolution | 320 × 240 | 320 × 240 |
+| Targets | Class ID 0–9; ten shape classes | `fx`, `fy` (tangential), `fz` (normal), in newtons |
+| Split | 60/20/20, stratified by class | 60/20/20, grouped by `contact_id` |
 
-A vision-based tactile sensor records the deformation of a compliant contact surface. These images provide information about contact geometry and loading. The shape task examines whether a model can distinguish contact patterns; the force task examines whether image features support quantitative estimates of physical interaction.
+![Representative shape-class images](docs/assets/shape_examples.jpg)
 
-![Tactile images for the ten released shape classes, labelled with their class IDs and names.](docs/assets/shape_examples.jpg)
+*One released example per shape class.*
 
-*One released image from each shape class. Labels follow the coursework's supplied class mapping.*
+![Paired press/shear images](docs/assets/force_pair.jpg)
 
-![Paired press and shear observations of one contact, with force labels in newtons.](docs/assets/force_pair.jpg)
+*Two images from one physical contact; they must stay together in data splitting.*
 
-*Paired observations share a contact identifier and must remain in the same training, validation or test split.*
+The data archive's older internal labels “Task A” (shape) and “Task B” (force) are **both tasks within coursework Part A**; they are not the separate group project Part B.
 
-The complete archive includes the images, labels, original dataset documentation and example submission files. Download it from the [dataset release](https://github.com/dianzdd123/2026-2027-Deep-Learning-Final-Coursework-Part-A/releases/download/v1.0.2/Tactile_DL_2027.zip). GitHub's **Code → Download ZIP** contains the repository documentation and utilities; the image archive is a separate release asset. See [Getting started](docs/GETTING_STARTED.md) for verified download and extraction instructions.
+## Coursework at a glance
 
-The source archive uses the legacy names “Task A” and “Task B” for shape classification and force estimation. Both belong to the individual coursework **Part A**. They are distinct from the separate group project, **Part B**.
+| Component | Assessment | Marks | Deadline (23:59 GMT) |
+|---|---|---:|---|
+| **Part A — individual** | Data preparation (10), shape classification (20), force estimation (20), technical report (10) | 60 | **Sunday 13 December 2026** |
+| **Part B — group** | Advanced tactile perception project with a working proof-of-concept and a video of at most five minutes | 40 | **Sunday 20 December 2026** |
+| **Peer assessment** | Each Part B member completes the Canvas form | — | **Wednesday 23 December 2026** |
 
-## Part A assignments
+In the **newly supplied simplified handbook and briefing**, groups comprise **4–6 students** and the only listed bonus is up to **five marks for systematic hyperparameter tuning** (Part A Task 4). The earlier full handbook differs; follow module-team clarification on Canvas. [Assessment overview](docs/ASSESSMENT_OVERVIEW.md).
 
-| Handbook task | Required work | Marks |
-|---|---|---:|
-| Task 1 — Data preparation | Examine images and label distributions; prepare pixel and force normalisation; construct valid 60/20/20 splits | 10 |
-| Task 2 — Shape classification | Implement and compare at least three CNN architectures; evaluate classification performance, efficiency and failure cases | 20 |
-| Task 3 — Force estimation | Compare at least two architectures; evaluate force errors and the required press/shear tangential analysis against a training-mean baseline | 20 |
-| Task 5 — Technical report | Present methods, experimental evidence, analysis and limitations in the prescribed report format | 10 |
+### Part A: required work
 
-Task 4, systematic hyperparameter tuning, is optional and can earn up to five bonus marks. Other optional work and the combined bonus cap are specified in the [assessment overview](docs/ASSESSMENT_OVERVIEW.md). The [Part A assignment guide](docs/COURSEWORK_GUIDE.md) provides the full requirements and their handbook references.
+1. **Prepare and inspect data:** verify labels, analyse image/force distributions, normalise with training statistics only, and split without contact leakage.
+2. **Classify shapes:** compare **at least three CNN architectures**, reporting accuracy, macro precision/recall/F1, confusion matrix, efficiency and failure examples.
+3. **Estimate forces:** compare **at least two architectures**, report per-axis and overall RMSE in **newtons**, and examine normal press versus shear. The newly supplied simplified handbook requires press/shear tangential RMSE, shear prediction plots and discussion; it **recommends** the training-mean baseline (required by the older full handbook).
+4. **Write the report:** an **IEEE double-column report, 3–6 pages**, with evidence-based analyses and correct citations. Task 4 hyperparameter tuning is optional.
 
-### Experimental practice
+**Part A must use the released coursework tactile images only.** General-purpose pretraining such as ImageNet is allowed with attribution. The Part A dataset and the GelSight subsets of TacVerse must **not** be used for Part B.
 
-Create reproducible splits containing 60% training, 20% validation and 20% test data. For shape classification, stratification gives 120 training, 40 validation and 40 test images per class. For force estimation, split the 1,000 contact identifiers into 600, 200 and 200 contacts, respectively, retaining both images of each contact together.
+### Submission interface
 
-Fit data-dependent preprocessing on the training split and use validation data for model selection. Reserve the test split for final evaluation. Record random seeds, split membership and experimental settings. The handbook permits a declared final refit on training and validation data after model selection; the test set must remain untouched.
-
-Report classification accuracy, macro precision, macro recall, macro F1 and a confusion matrix. Report force errors in newtons, including the prescribed per-axis, overall and tangential RMSE measures, separate press/shear results, baseline comparison and failure analysis. Exact definitions appear in the [assignment guide](docs/COURSEWORK_GUIDE.md).
-
-For Part A, use only the released coursework data. Additional tactile datasets and other TacVerse images are excluded; general-purpose pretrained weights, such as ImageNet weights, are permitted with citation. See [handbook Section 11.3](resources/2026_2027_DL_Final_Project_Handbook_Shared.pdf#page=41).
-
-## Report and submission
-
-The Part A report uses the IEEE conference format, double column, and is 3–6 pages long. References and the AI-use declaration may extend beyond page 6. Submit `DL_Coursework_YourName_CID.zip` through Canvas, containing the report, a `code/` folder and a model folder named with your eight-digit CID.
-
-The prediction interface accepts a directory of anonymous images and produces one output row per image:
+Student model folders must contain a working `predict.py` with two commands:
 
 ```bash
 python predict.py --task shape --images <IMAGE_DIR> --out <OUT_CSV>
 python predict.py --task force --images <IMAGE_DIR> --out <OUT_CSV>
 ```
 
-Shape output uses `filename,class_id`; force output uses `filename,fx,fy,fz`, with forces on their original scale in newtons. The model folder must be under 200 MB, support CPU execution, and complete each task within ten minutes on a Colab GPU. Prediction must run without downloads. See [handbook Section 5.4](resources/2026_2027_DL_Final_Project_Handbook_Shared.pdf#page=21) and the [submission guidance](docs/COURSEWORK_GUIDE.md) for packaging, notebook sharing and the required checks.
+Output CSV fields: `filename,class_id` for shape; `filename,fx,fy,fz` for force. Models receive **image data only** at prediction time; no `contact_id`, `is_shear` or filename-derived labels. The simplified handbook requires a CID-named model folder **under 200 MB**, no inference-time downloads, CPU/GPU compatibility and **ten minutes per task on a Colab GPU**. See the [inference reference](example_submission/README.md) and [Part A guide](docs/COURSEWORK_GUIDE.md).
 
-The supplied scripts and checkpoints demonstrate this interface. Their example training uses all released images, so their predictions do not constitute an independently evaluated coursework result. Students develop and evaluate their own models using the required experimental protocol.
+The example checkpoints and `train_example.py` demonstrate the inference format only: they were trained using all released images and are **not** valid held-out evaluation baselines.
 
-### Academic integrity
+## Start here
 
-Part A is individual work. Assessed code, weights, results and reports must not be shared, including within a Part B group. AI assistance must be declared, understood and checked; AI must not write whole sections of the Part A report. Include the required four-line declaration even when no AI was used. The [assessment overview](docs/ASSESSMENT_OVERVIEW.md) summarises the complete policy and links to the handbook.
+1. Read the **current simplified and full handbooks on Canvas**; review [assessment information](docs/ASSESSMENT_OVERVIEW.md).
+2. Download [`Tactile_DL_2027.zip`](https://github.com/dianzdd123/2026-2027-Deep-Learning-Final-Coursework-Part-A/releases/download/v1.0.2/Tactile_DL_2027.zip) from the release, **not** GitHub’s *Code → Download ZIP*. Check its accompanying `README.md`.
+3. Open the [exploration notebook](notebooks/01_explore_dataset.ipynb), or run `python scripts/download_dataset.py` followed by `python scripts/verify_dataset.py --data Tactile_DL_2027`.
+4. Use [Getting started](docs/GETTING_STARTED.md) for Colab/VS Code setup; [dataset card](docs/DATASET_CARD.md) for schema and provenance; and [Part A guide](docs/COURSEWORK_GUIDE.md) for the required experiments.
+5. Perform your own controlled experiments and submit assessed work to **Canvas**, not GitHub.
 
-## Related group project: Part B
+## Academic conduct, attribution and support
 
-Part B is a separate advanced tactile-perception project undertaken in groups of 5–6. It contributes 40 marks, subject to peer moderation, and requires a working proof of concept and a video of at most five minutes. Its deadline is Sunday 20 December 2026 at 23:59 GMT; peer assessment is due Wednesday 23 December 2026 at 23:59 GMT.
+Part A is individual: do not publish or share assessed student code, weights, reports or results. Declare AI assistance; do not use AI to write entire report sections, generate or change experimental results or invent references. Part B presenters must use their own voices. Refer to the module’s current handbook and Canvas guidance.
 
-Neither this Part A dataset nor TacVerse's GelSight subsets may be used for Part B. The [Part B project guide](docs/PART_B_GUIDE.md) covers research directions, reading requirements, permitted data, group records and submission specifications.
+Questions: **Dr Dandan Zhang** (`d.zhang17@imperial.ac.uk`) or **Ms Lan Wei** (`l.wei24@imperial.ac.uk`). Email subject: `[2026-Deep-Learning-Inquiry]-[Name]`. Use [GitHub Issues](https://github.com/dianzdd123/2026-2027-Deep-Learning-Final-Coursework-Part-A/issues) for repository access problems only; do not post assessed solutions or identifying information.
 
-## Data provenance and citation
-
-The supplied dataset is a curated subset of TacVerse, drawn from `Shape_Classification/GelSight (no marker)` and `Force_Regression/GelSight (with marker)`. Use the class mapping and experimental protocol supplied for this coursework. Acknowledge the source publication when using the data:
-
-> Wei, L., et al. (2026). **TacVerse: A Multisensor Dataset and Benchmark for Cross-Sensor Vision-Based Tactile Perception.** *Advanced Robotics Research*, e70169. [doi:10.1002/adrr.70169](https://doi.org/10.1002/adrr.70169).
-
-[Citation metadata](CITATION.cff) · [Original coursework repository](https://github.com/LannWei/Deep-Learning-CourseWork-2027) · [TacVerse source repository](https://github.com/LannWei/Tactile_Database) · [Preserved source README](docs/ORIGINAL_DATASET_README.md)
-
-The archive is distributed unchanged. No licence file was included in the supplied package, and this repository assigns no new licence to the source data or example code. Enquiries about use beyond the coursework or redistribution should be directed to the teaching team.
-
-## Versions and support
-
-The complete dataset and its checksum are distributed with release `v1.0.2`. The archive preserves the original dataset version `1.0.0` byte for byte. The [dataset card](docs/DATASET_CARD.md) and [validation record](docs/validation.json) document the release checks. Documentation updates are recorded in the [changelog](CHANGELOG.md) and [latest release](https://github.com/dianzdd123/2026-2027-Deep-Learning-Final-Coursework-Part-A/releases/latest). The [handbook notes](docs/HANDBOOK_NOTES.md) record the document version and passages requiring module-team clarification.
-
-Use [GitHub Issues](https://github.com/dianzdd123/2026-2027-Deep-Learning-Final-Coursework-Part-A/issues) for access problems or documentation corrections. Direct assessment questions through the module's designated channels, and keep assessed solutions and student-identifying information out of public issues.
+**Source:** TacVerse — Wei, L. *et al.* (2026), *Advanced Robotics Research*, e70169. [DOI: 10.1002/adrr.70169](https://doi.org/10.1002/adrr.70169). The supplied archive is preserved unchanged and does not include a new reuse licence. [Dataset card](docs/DATASET_CARD.md) · [Citation metadata](CITATION.cff) · [Latest public release](https://github.com/dianzdd123/2026-2027-Deep-Learning-Final-Coursework-Part-A/releases/latest).
