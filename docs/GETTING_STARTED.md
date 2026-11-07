@@ -8,7 +8,7 @@ The released dataset contains 2,000 shape-classification images and 2,000 force-
 
 ## 1. Review the coursework requirements
 
-Read the [Final Project Handbook](../resources/2026_2027_DL_Final_Project_Handbook_Shared.pdf), using the [reading map](../resources/README.md) to locate the relevant sections. For Part A, begin with Sections 2–5 and the [assignment guide](COURSEWORK_GUIDE.md). The [assessment overview](ASSESSMENT_OVERVIEW.md) consolidates deadlines, deliverables and marking criteria.
+Read the current **Simplified Handbook, full handbook and briefing on Canvas** before starting. The older full handbook retained in this repository differs from the newly provided documents; consult [source alignment](SOURCE_ALIGNMENT.md) and official Canvas clarifications. The [Part A assignment guide](COURSEWORK_GUIDE.md) describes the experiments, while the [assessment overview](ASSESSMENT_OVERVIEW.md) consolidates dates and deliverables.
 
 The exploration notebook supports data inspection. Model development, comparison and evaluation form the assessed work described in the handbook.
 

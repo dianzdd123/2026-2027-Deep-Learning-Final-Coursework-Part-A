@@ -1,38 +1,26 @@
-# Handbook version and wording notes
+# Handbook provenance and current clarification notes
 
-[Handbook (PDF)](../resources/2026_2027_DL_Final_Project_Handbook_Shared.pdf) · [Assessment overview](ASSESSMENT_OVERVIEW.md) · [Part A guide](COURSEWORK_GUIDE.md) · [Part B guide](PART_B_GUIDE.md)
+[Course homepage](../README.md) · [Source alignment](SOURCE_ALIGNMENT.md) · [Assessment](ASSESSMENT_OVERVIEW.md)
 
-These notes accompany the 51-page 2026/27 Final Project Handbook and identify provisions that require careful interpretation or clarification. The PDF is retained unchanged. The notes introduce no additional assessment rules or permissions. Course-wide clarifications are issued by the module team on Canvas, as described in [Section 1.3, PDF page 5](../resources/2026_2027_DL_Final_Project_Handbook_Shared.pdf#page=5).
+The previously uploaded **51-page Final Project Handbook** is preserved in [resources](../resources/2026_2027_DL_Final_Project_Handbook_Shared.pdf). Subsequently supplied course materials dated **10 November 2026** are the **9-page Simplified Handbook 2026/27** and **27-slide Key Information Student Briefing**. Both direct students to **Canvas** for current handbooks, announcements, groups and submissions. The new materials are not incorporated as PDF binaries in this repository.
 
-On this page: [TacVerse data](#1-permitted-use-of-tacverse-data) · [Synthetic data and AI](#2-synthetic-data-research-and-the-ai-use-table) · [Timing and submission policies](#3-inference-timing-and-late-submission-details) · [Document versions](#4-dates-versions-and-source-preservation)
+## Differences that require official module clarification
 
-<a id="1-which-tacverse-data-may-be-used"></a>
+- **Group size:** newer simplified handbook and briefing state **4–6**; earlier full handbook states **5–6**.
+- **Maximum bonus:** newer documents specify **only up to +5 for Task 4 hyperparameter tuning**; earlier full handbook describes several bonuses with a +15 total cap.
+- **Training-mean force baseline:** newer simplified handbook *recommends* it; earlier full handbook *requires* it.
+- **Generative Part B direction:** appears in the reading/project directions, but general AI and data integrity restrictions prohibit generating/changing data without explicit distinction between legitimate generative experiments and fabricated evidence.
 
-## 1. Permitted use of TacVerse data
+The newly supplied simplified handbook explicitly says the full handbook takes priority if inconsistent. Do not use this documentation as a substitute for a binding Canvas announcement identifying which full-handbook revision is current.
 
-The table in [Section 6.5, PDF page 25](../resources/2026_2027_DL_Final_Project_Handbook_Shared.pdf#page=25) says “never use any TacVerse data in Part A”. This wording is broader than the Part A dataset specification, which identifies the released coursework data as a curated TacVerse subset.
+## Data and technical facts
 
-The specific restriction in [Section 11.3, PDF page 41](../resources/2026_2027_DL_Final_Project_Handbook_Shared.pdf#page=41) states that Part A uses only the released coursework data: no additional TacVerse data or other tactile dataset may be added. The repository guides follow this restriction. General-purpose pretrained weights such as ImageNet are permitted if acknowledged.
+The archive `Tactile_DL_2027.zip` is unchanged, with SHA-256 `1a1620e4695b220043318e7b209202940b930fcf82f69b4f761213255c6b4ca5`. Dataset contents include 2,000 shape and 2,000 force images. The sample script and checkpoints illustrate how to produce prediction files; they were trained on all released images, so they are not held-out test results.
 
-For Part B, Section 11.3 excludes both the Part A coursework dataset and the GelSight subsets of TacVerse. Refer questions about a proposed dataset to the module team.
+Use only the supplied coursework dataset for Part A. The older handbook contains broader wording about TacVerse than its more specific dataset restriction: the released subset itself comes from TacVerse, but **extra** tactile data are excluded from Part A. Do not use this subset or TacVerse GelSight subsets for Part B.
 
-## 2. Synthetic-data research and the AI-use table
+## Verification and version status
 
-Direction E in [Section 6.4, PDF page 25](../resources/2026_2027_DL_Final_Project_Handbook_Shared.pdf#page=25) proposes diffusion/GAN generation of tactile data. The risk guidance in [Section 7.6, PDF page 30](../resources/2026_2027_DL_Final_Project_Handbook_Shared.pdf#page=30) discusses evaluating synthetic-data approaches on real data. However, the AI-use table in [Section 11.2, PDF page 40](../resources/2026_2027_DL_Final_Project_Handbook_Shared.pdf#page=40) gives a broad prohibition on generating or changing data, results or references.
+The public distribution remains **v1.0.2** and the same verified archive is linked in the repository. The later revision of the `main` branch updates student guidance without changing the published dataset or creating another release. Earlier commits and tagged versions remain Git-history records.
 
-Seek clarification from the module team about the permitted experimental scope before choosing a synthetic-data direction. The generative-methods proposal and the AI-use prohibition remain unresolved in the source document. Fabricated experiments, generated samples presented as real measurements, and invented results or references are not permitted.
-
-## 3. Inference timing and late-submission details
-
-[Section 5.4, PDF page 21](../resources/2026_2027_DL_Final_Project_Handbook_Shared.pdf#page=21) requires each task to finish within ten minutes on a Colab GPU runtime. The hidden-test image count and exact GPU model are not specified. A small self-check establishes that the interface and model-loading process work. It cannot establish runtime on the complete hidden test set.
-
-[Section 9.3, PDF page 35](../resources/2026_2027_DL_Final_Project_Handbook_Shared.pdf#page=35) states the late penalty, maximum late window and extension process. It does not specify partial-day rounding or the complete order of operations between penalties and mark caps. Those details require clarification. The handbook states that College policy applies where it differs.
-
-## 4. Dates, versions and source preservation
-
-- The cover states 2026/27, released Tuesday 10 November 2026. This is the PDF's stated project date, not the GitHub repository creation date.
-- Dataset content version 1.0.0 was first published on 2 November 2026. The unchanged archive and checksum are now distributed with release v1.0.2. Images, labels, the original dataset README, example scripts and checkpoints are unchanged.
-- Guidance v1.0.1 aligns the repository’s student materials with the 51-page handbook. Historical commits and the original dataset tag are retained.
-- Guidance v1.0.2 refines the course descriptions, resource navigation and student guidance. The handbook and assessment requirements remain unchanged.
-- Release v1.0.2 is the current public distribution. Earlier release listings are unpublished; their Git tags and commit history remain available for provenance.
-- The original dataset README is retained for provenance. Current instructions follow the 51-page handbook, including its mixed press/shear self-check sampling in place of the older every-100th-image example.
+For a detailed side-by-side comparison, consult [SOURCE_ALIGNMENT.md](SOURCE_ALIGNMENT.md).
