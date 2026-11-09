@@ -26,9 +26,15 @@ Use only the released tactile data for Part A. Split force data by `contact_id`;
 
 ![Shape examples](docs/assets/shape_examples.jpg)
 
-[Dataset labels](docs/DATASET_CARD.md) · [Part B](docs/PART_B_GUIDE.md)
+[Dataset labels](docs/DATASET_CARD.md)
 
 Submit assessed work on **Canvas**. Check Canvas for announcements and the current simplified handbook.
 
 Questions: `d.zhang17@imperial.ac.uk` or `l.wei24@imperial.ac.uk`.  
 Email subject: `[2026-Deep-Learning-Inquiry]-[Name]`.
+
+## Additional information: Part B group project
+
+Part B is a separate **group project** worth **40 marks**, due **20 December 2026, 23:59 GMT**. It does not use the Part A dataset.
+
+Read the [Part B guide](docs/PART_B_GUIDE.md) when preparing your group project. Registration and submission are on Canvas.
