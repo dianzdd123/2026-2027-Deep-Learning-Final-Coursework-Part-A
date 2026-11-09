@@ -1,78 +1,121 @@
-# Part A : Individual technical coursework
+# Part A: Simplified Handbook
 
-[Home](../README.md) · [Getting started](GETTING_STARTED.md) · [Dataset card](DATASET_CARD.md) · [Assessment](ASSESSMENT_OVERVIEW.md)
+[Home](../README.md) · [Setup](GETTING_STARTED.md) · [Dataset labels](DATASET_CARD.md)
 
-**Shape classification and 3D contact-force estimation from GelSight images** · **60 marks** · **Due Sunday 13 December 2026 at 23:59 GMT via Canvas**.
+**Individual coursework · 60 marks**  
+**Deadline: 13 December 2026, 23:59 GMT · Submit on Canvas**
 
-This assignment forms the individual Part A component of Deep Learning within Imperial's [I-X MSc Artificial Intelligence Applications and Innovation](https://www.imperial.ac.uk/study/courses/postgraduate-taught/2026/applications-innovation/). The aim is to develop, compare and explain deep-learning models using physical tactile observations. It is not enough to present a high test score: document the data split, architecture decisions, fair experimental comparisons, error patterns and limits of generalisation.
+Build models for shape classification and 3D contact-force estimation from tactile images.
 
-## 1. Data and access
+## 1. Download the data
 
-[Download `Tactile_DL_2027.zip`](https://github.com/dianzdd123/2026-2027-Deep-Learning-Final-Coursework-Part-A/releases/download/v1.0.2/Tactile_DL_2027.zip). The archive (37.44 MB) contains the original dataset `README.md`, 4,000 RGB 320×240 JPEG images and `example_submission/`. GitHub's **Code → Download ZIP** is *not* the data download.
+[Download Tactile_DL_2027.zip](https://github.com/dianzdd123/2026-2027-Deep-Learning-Final-Coursework-Part-A/releases/download/v1.0.2/Tactile_DL_2027.zip) and extract it.
 
-| | Shape | Force |
+| Task | Data | Target |
 |---|---|---|
-| Images | 2,000: 200 per class across ten classes | 2,000: press and shear images for 1,000 contacts |
-| Labels | `filename,class_name,class_id` | `filename,contact_id,is_shear,fx,fy,fz` |
-| Sensor | GelSight without markers | GelSight with markers |
-| Prediction target | Integer class ID, 0–9 | Three force components in newtons |
+| Shape classification | 2,000 images; ten classes | Class ID 0–9 |
+| Force estimation | 2,000 images; 1,000 press/shear pairs | `fx,fy,fz` in newtons |
 
-Shape classes: 0 cylinder; 1 dots; 2 hexagon; 3 line; 4 moon; 5 rectangle; 6 ring; 7 small_sphere; 8 triangle; 9 wave. `fx` and `fy` denote tangential force; `fz` denotes normal force, with negative `fz` indicating pressing into the sensor.
+All images are RGB, 320 × 240 pixels. [Label paths and class IDs](DATASET_CARD.md).
 
-## 2. Required experimental design (Task 1 : 10 marks)
+Use only the released coursework tactile data. General-purpose pretrained weights, such as ImageNet, are permitted with citation.
 
-Inspect images and label associations; visualise class counts and force distributions, distinguishing press and shear. Make **60/20/20 train/validation/test splits**: stratify shape classes; for force split **by `contact_id`** so paired observations never cross sets. Fit any data-dependent normalisation on **training data only**. Store the split identifiers and random seed. Use the test set only for final evaluation.
+## 2. Prepare the data — 10 marks
 
-A meaningful comparison holds splits and evaluation conditions fixed. Image flips or rotations may change force-vector labels and should not be applied without physical justification. Do not train on any extra tactile dataset: Part A uses only the released coursework data (general-purpose ImageNet pretraining is permitted with citation).
+- Inspect sample images, label associations, class counts and force distributions.
+- Use **60% training, 20% validation and 20% test**.
+- Stratify shape splits by class.
+- Split force data **by `contact_id`**, keeping both images of each contact together.
+- Fit normalisation and force-target standardisation using **training data only**.
+- Save the splits and random seed. Select models on validation data; use the test set for final evaluation.
 
-## 3. Shape classification (Task 2 : 20 marks)
+Keep splits and evaluation conditions fixed across models. For force images, use flips or rotations only if you can justify the corresponding force-label transformation.
 
-Implement and compare **at least three distinct CNN architectures**, including a clear baseline and models that genuinely differ in design. For each, report model size, training/inference timings with hardware, accuracy, **macro precision, macro recall, macro F1**, and a confusion matrix. Inspect misclassified images, interpret shape confusions and discuss the generalisation limits of a random image split.
+## 3. Shape classification — 20 marks
 
-## 4. Force estimation (Task 3 : 20 marks)
+Compare **at least three distinct CNN architectures**, including a baseline.
 
-Compare **at least two models** predicting `fx, fy, fz` from a **single anonymous image**. Standardise targets using training statistics and convert predictions back to **newtons** for evaluation. Report RMSE for each axis and overall. For both **press** (`is_shear=0`) and **shear** (`is_shear=1`) subsets, report tangential vector error:
+Report:
 
-```text
-RMSE_t = sqrt(mean((pred_fx - true_fx)^2 + (pred_fy - true_fy)^2))
+- Accuracy and macro precision, recall and F1.
+- Confusion matrix and examples of misclassified images.
+- Model size, training and inference times, and hardware.
+- A brief explanation of architecture choices, common errors and generalisation limits.
+
+## 4. Force estimation — 20 marks
+
+Compare **at least two models** predicting `fx,fy,fz` from one image.
+
+Report:
+
+- Per-axis and overall RMSE in **newtons**, after reversing target standardisation.
+- Tangential RMSE separately for press (`is_shear=0`) and shear (`is_shear=1`):
+
+```python
+rmse_t = np.sqrt(np.mean((pred_fx - true_fx)**2 + (pred_fy - true_fy)**2))
 ```
 
-For shear images show predicted-versus-true `fx` and `fy` plots with the `y=x` reference. Discuss normal versus tangential error and the worst failures. **Recommended in the simplified handbook:** report a baseline that always predicts the **training-split mean force** (this is required in the earlier full handbook; see [source comparison](SOURCE_ALIGNMENT.md)).
+- Predicted-versus-true `fx` and `fy` plots for shear images, with a `y=x` reference.
+- Normal versus tangential errors and examples of the largest failures.
 
-**Never use `contact_id`, `is_shear`, image filenames or test labels as prediction features.**
+A model that always predicts the **training-set mean force** is a recommended baseline.
 
-## 5. Technical report (Task 5 : 10 marks)
+Use image pixels only for prediction. Do not use `contact_id`, `is_shear`, filenames or test labels as input features. Negative `fz` indicates pressing into the sensor.
 
-Write a **3–6-page IEEE conference-format, double-column** report: Abstract, Introduction, Objectives, Methodology, Experiments, Evaluation, Conclusions and Future Work, followed by references and an AI-use declaration. Include the split protocol, sample images/label distributions, architecture comparisons, training curves, confusion matrix, force RMSE, press/shear tangential error, shear scatter plots and analysis of errors. Cite TacVerse and all reused architectures, pretrained weights and code.
+## 5. Optional hyperparameter tuning — up to 5 bonus marks
 
-Task 4 (optional) offers **up to five bonus marks** in the newer simplified handbook for systematic hyperparameter tuning: predefine a sensible search space/budget, select on the validation set and report trials. No additional bonuses are described in that newer document.
+Define a search space and budget, select settings using validation results, and report the trials and resulting improvement.
 
-## 6. Reproducible model submission
+## 6. Technical report — 10 marks
 
-Archive name: `DL_Coursework_YourName_CID.zip`.
+Write a **3–6-page IEEE conference-format, double-column report** covering:
 
-```text
-DL_Coursework_YourName_CID.zip
-├── DL_Coursework_YourName_CID.pdf
-├── code/                       # reproducible training/evaluation work
-└── 01234567/                   # your own eight-digit CID
-    ├── predict.py
-    ├── shape_model.pt
-    ├── force_model.pt
-    └── requirements.txt        # optional, only extra pinned packages
-```
+- Abstract, Introduction and Objectives.
+- Methodology: splits, preprocessing, architectures and training.
+- Experiments and Evaluation: model comparisons, learning curves, required metrics and plots, and error analysis.
+- Conclusions and Future Work.
+- References and an AI-use declaration.
 
-The grader runs:
+Cite the dataset, reused code, architectures and pretrained weights. Explain your results using evidence from your own experiments.
+
+Dataset citation: Wei, L. *et al.* (2026), TacVerse, *Advanced Robotics Research*, e70169. [doi:10.1002/adrr.70169](https://doi.org/10.1002/adrr.70169).
+
+## 7. Submit your work
+
+Upload **`DL_Coursework_YourName_CID.zip`** to Canvas.
+
+| Path inside ZIP | Contents |
+|---|---|
+| `DL_Coursework_YourName_CID.pdf` | Technical report |
+| `code/` | Training and evaluation code or notebooks |
+| `01234567/` | Model folder named with your eight-digit CID |
+| `01234567/predict.py` | Prediction script |
+| `01234567/shape_model.pt` | Shape weights, or your model's equivalent |
+| `01234567/force_model.pt` | Force weights, or your model's equivalent |
+| `01234567/requirements.txt` | Additional pinned dependencies, if needed |
+
+Run both commands from the model folder:
 
 ```bash
 python predict.py --task shape --images <IMAGE_DIR> --out <OUT_CSV>
 python predict.py --task force --images <IMAGE_DIR> --out <OUT_CSV>
 ```
 
-Input: a flat folder of anonymous JPEGs. Output: CSV `filename,class_id` or `filename,fx,fy,fz` (newtons, original sign). Models must load local weights, run on CPU/GPU, download nothing during inference, use a model folder **under 200 MB**, and finish each task within **10 minutes** on a Colab GPU. Perform a clean-environment self-check and share your notebook with the TA at `l.wei24@imperial.ac.uk` as Viewer.
+Input is a flat folder of anonymous JPEGs. Write one row per image:
 
-The supplied [example code](../example_submission/README.md) tests the *interface*, not legitimate held-out performance: its demonstration weights were trained on all released images. Do not cite their predictions as independent test results.
+| Task | CSV columns |
+|---|---|
+| Shape | `filename,class_id` |
+| Force | `filename,fx,fy,fz` — newtons, original sign |
 
-## 7. Sources and scope
+The model folder must be **under 200 MB**, support CPU and GPU, download nothing during inference, and finish each task within **10 minutes on a Colab GPU**. Load weights with paths relative to the script. List only additional pinned packages in `requirements.txt`; exclude `torch` and `torchvision`.
 
-This page follows the newly uploaded **Simplified Handbook 2026/27** (pp. 2–5) and **Key Information Student Briefing** (slides 10–14 and 23–26). The older full handbook in the repository differs on some bonus and baseline rules. Its authority relative to the new simplified document requires a Canvas clarification; see [source alignment](SOURCE_ALIGNMENT.md). Assessed submissions must go to Canvas, not GitHub.
+Test both commands in a clean environment. Share your notebook with `l.wei24@imperial.ac.uk` as **Viewer**.
+
+The [example submission](../example_submission/README.md) demonstrates the interface. Train and evaluate your own models using the required splits; the supplied checkpoints were trained on all released images.
+
+## 8. Academic integrity
+
+Part A is individual work. Do not share assessed code, weights, reports or results. Declare AI assistance; do not use AI to write entire report sections or fabricate data, results or references.
+
+Use Canvas for submission and course announcements. Contact `d.zhang17@imperial.ac.uk` or `l.wei24@imperial.ac.uk` for coursework questions.

@@ -1,58 +1,48 @@
-# Part B : Advanced tactile perception project
+# Part B: Group Project
 
-[Home](../README.md) · [Assessment](ASSESSMENT_OVERVIEW.md) · [Source comparison](SOURCE_ALIGNMENT.md)
+[Home](../README.md) · [Deadlines](ASSESSMENT_OVERVIEW.md)
 
-**Group project · 40 marks · Due Sunday 20 December 2026, 23:59 GMT on Canvas**
+**Groups of 4–6 · 40 marks · Due 20 December 2026, 23:59 GMT on Canvas**
 
-The newly uploaded simplified handbook and briefing specify **groups of 4–6 students**. An earlier full handbook in the repository specifies 5–6; the simplified handbook says the full handbook controls discrepancies. **Confirm the final group-size rule through Canvas announcements.**
+Propose an advanced tactile perception method for a defined stakeholder. Build and evaluate a working proof of concept, then present it in a video of **at most five minutes**.
 
-## Aim and assessed outputs
+## Required work
 
-Propose an advanced tactile perception method for a clearly identified stakeholder, build and evaluate a **working proof-of-concept model**, and present the project in a video **no longer than five minutes**. Each student contributes to the technical work, reviews the final submission and presents in their **own voice**. The code demonstrates the proof of concept but does not earn separate marks.
+- Read at least two relevant papers and build on at least one from the Canvas reading list.
+- Define the task, stakeholder, proposed method and contribution.
+- Train a model on an appropriate dataset and report held-out test results.
+- Demonstrate the model on test data.
+- Keep meeting minutes and individual contribution logs.
+
+A baseline comparison, a split by object/session/trial/sensor where appropriate, and an explained failure case are recommended.
+
+**Do not use the Part A dataset or TacVerse GelSight subsets.** Cite your data and check its licence.
+
+Choose a direction from the simplified handbook: material/texture/hardness perception, tactile marker graphs, cross-sensor or self-supervised learning, visuo-tactile fusion, generative tactile models, or slip/grasp-outcome detection. Your own direction requires module approval by **29 November**. Confirm permitted use of generated data with the module team.
+
+## Marking
 
 | Criterion | Marks |
 |---|---:|
 | Problem and stakeholder | 10 |
-| Proposed solution (feasibility, creativity) | 10 |
-| Novelty relative to relevant research | 10 |
-| Presentation quality and participation | 10 |
+| Proposed solution | 10 |
+| Novelty relative to research | 10 |
+| Presentation and participation | 10 |
 
-## Research and project directions
+Proof-of-concept code is mandatory.
 
-Read at least two relevant papers and build the proposed method on at least one from the course reading list on **Canvas**. State what your project adds. The simplified handbook identifies directions A–G:
+## Submission
 
-| Direction | Starting references | Suggested eligible data |
-|---|---|---|
-| A. Explainable material, texture or hardness perception | TactEx; ViTacTip | Touch and Go; ObjectFolder Real |
-| B. Graph-based learning on tactile markers | Tac-VGNN | Eligible marker-based TacVerse / TacTip-family data |
-| C. Cross-sensor or self-supervised learning | TacVerse; SARL; Sparsh | Non-GelSight TacVerse; Touch-Slide |
-| D. Visuo-tactile fusion / translation | Multimodality sensor; SARL | Touch and Go; ObjectFolder Real |
-| E. Generative tactile approaches | MultiDiffSense | Real dataset and synthetic images; **seek clarification about AI/data-generation restrictions** |
-| F. Slip and grasp-outcome detection | Feeling of Success; ViTacTip | Feeling of Success; YCB-Slide |
-| G. Your own advanced research idea | Relevant reading-list paper | Requires module approval by 29 November |
+The coordinator uploads:
 
-**Data separation is strict:** the Part A coursework data and **TacVerse GelSight subsets** must not be used for Part B. Check dataset licence, cite its source and do not submit raw data.
+| File | Contents |
+|---|---|
+| `GroupXX_TactileDL_Video.mp4` | At most 5:00, under 1 GB, with captions |
+| `GroupXX_TactileDL_Code.zip` | Notebook, README and trained weights; no raw data |
+| `GroupXX_TactileDL_Contributions.pdf` | Contributions and AI-use declaration |
 
-## Proof of concept
+Each member must appear and present in their own voice. Include citations, results and the model demonstration. Do not use AI voices or avatars to replace group members.
 
-The simplified handbook requires: one defined advanced task on an appropriate dataset, a model trained by the group, relevant held-out test results and a brief demonstration on test data. It recommends a split by **object/session/trial/sensor rather than individual frame**, a baseline comparison and at least one explained failure case.
+Submit the charter and proposed direction by **29 November, 23:59 GMT**. Attend the TA progress check on **30 November–4 December**. Each member completes peer assessment by **23 December, 23:59 GMT**.
 
-## Schedule and group records
-
-- **23 November:** group list confirmed on Canvas.
-- **29 November, 23:59 GMT:** signed group charter and one-paragraph direction, paper(s), dataset and stakeholder.
-- **30 November–4 December:** progress meeting with the TA.
-- **20 December, 23:59 GMT:** project submission.
-- **23 December, 23:59 GMT:** individual peer assessment closes.
-
-Maintain weekly meeting minutes and individual contribution logs; raise group problems early.
-
-## Video and submission
-
-Video: **maximum 5:00**, each member appearing and presenting in their own voice; include paper citations, evaluation and an actual proof-of-concept demonstration. Captions required (burned in or corrected `.srt`), MP4 preferred, under 1 GB.
-
-The group coordinator submits `GroupXX_TactileDL_Video.mp4`, `GroupXX_TactileDL_Code.zip` (notebook, README, trained weights; no raw data), and `GroupXX_TactileDL_Contributions.pdf` through Canvas. All group members complete the peer assessment. Ask the TA for the current confirmation-email procedure if needed.
-
-**Academic integrity:** never fabricate data, metrics or references, never substitute AI voices/avatars for members, and include the prescribed AI-use declaration. Directions involving generated data must be clarified with the module team given the wording of the AI policy.
-
-Sources: Simplified Handbook 2026/27 pp. 5–9; Student Briefing slides 16–23, 24–26. The binding full handbook and Canvas announcements take precedence where the provided versions conflict.
+Use Canvas for the current simplified handbook, forms and announcements.
